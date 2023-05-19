@@ -13,8 +13,24 @@
     ></script>
   </head>
   <body>
+    <div class="sidebar">
+      <button id="button1" onclick="openAccount()">Open Account</button>
+      <button id="button2" onclick="transferMoney()">Transfer Money</button>
+      <button id="button3" onclick="viewTransactions()">
+        View Transactions
+      </button>
+      <!-- Add more buttons as needed -->
+    </div>
+
+    <div class="right-sidebar">
+      <button id="button1" onclick="openAccount()">Open Account</button>
+      <button id="button2" onclick="transferMoney()">Transfer Money</button>
+      <button id="button3" onclick="viewTransactions()">
+        View Transactions
+      </button>
+    </div>
     <div class="header">
-      <h1>My Banking App</h1>
+      <h1>SE404 Banking System</h1>
       <div class="notification-icon">
         <!-- <button onclick="showNotifications()"> -->
         <i
@@ -32,18 +48,12 @@
             <li onclick="hideNotifications()">
               Your credit card 567 has a payment with deadline in 5 days
             </li>
-            <li onclick="hideNotifications()">Notification 3</li>
+            <li onclick="hideNotifications()">
+              Your technical issue with ID 987 have been resolved
+            </li>
           </ul>
         </div>
       </div>
-    </div>
-    <div class="button-container">
-      <button id="button1" onclick="openAccount()">Open Account</button>
-      <button id="button2" onclick="transferMoney()">Transfer Money</button>
-      <button id="button3" onclick="viewTransactions()">
-        View Transactions
-      </button>
-      <!-- Add more buttons as needed -->
     </div>
     <div class="center-container">
       <!-- Add your central content here -->
