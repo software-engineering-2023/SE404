@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+        body{
+            background-image: url('img9.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+        .submission{
+            max-width: 1000px;
+            height: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        label{
+            display: block;
+            padding: 1rem 0 .25rem;
+            margin: auto 2rem;
+            font-family: "Trebuchet MS";
+            font-size: 18px;
+            font-weight: 600;
+            
+        }
+        input{
+            display: block;
+            width: 80%;
+            padding: 1rem;
+            font-size: 16px;
+            border:none;
+            outline :none;
+            border-radius: 25px 25px 25px 25px;
+        }
+        h3 {
+            margin: 12px 2rem;
+            color: #450663;
+            font-family: "Trebuchet MS";
+            font-size: 24px;
+            font-weight: 600;
+        }
+        h1{
+            color: #450663;
+            font-family: "Trebuchet MS";
+            font-size: 34px;
+            font-weight: 600;
+            text-align: center;
+        }
+        fieldset {
+            margin: auto 2rem 1rem;
+            border-bottom: rgba(114, 114, 114, 0.863);
+            border-left: rgba(114, 114, 114, 0.863);
+            border-right:  rgba(114, 114, 114, 0.863);
+        }
+        .personalInfo{
+            margin: auto 3rem 2rem;
+        }
+        .birthdateOptions select{
+            width: 84%;
+            padding: 1rem;
+            font-size: 18px;
+            border: none;
+            outline :none;
+            border-radius: 25px 25px 25px 25px;
+        }
+        .accOptions select{
+            width: 75.75%;
+            padding: 1rem;
+            font-size: 18px;
+            margin: auto 3rem 2rem;
+            border: none;
+            outline :none;
+            border-radius: 25px 25px 25px 25px;
+        }
+        .accOptions label{
+            margin: auto 5rem;
+        }
+        p{
+            padding: 1rem 0 .25rem;
+            margin: auto 2rem auto 1rem;
+            font-family: "Trebuchet MS";
+            font-size:  17px;
+            font-weight: 600;
+            text-align: center;
+            line-height: 10px;
+            line-break: auto;
+
+        }
+        button {
+            width: 20%;
+            border-radius: 35px 35px 35px 35px;
+            padding: 1rem ;
+            margin: 2rem 6rem;
+            border:none;
+            background: #450663; 
+            font-family: "Trebuchet MS";
+            font-size: 16px;
+            font-weight: 600;
+            color: #fff;
+            text-align: middle;
+           
+        }
+        .terms-mailing{
+            margin: auto 6rem;
+            font-family: "Trebuchet MS";
+            font-size: 18px;
+            font-weight: 700;
+        }
+        .checkbox input {
+      margin: auto auto auto -20rem;
+      }
+        </style>      
+    </head>
+
+
+    <body>
+        <h1>SE404 Banking System</h1>
+        <p> Easily open a bank account in minutes and make money management simple. 
+            Enjoy a bank account with the flexibility you need for your busy schedule. </p> 
+        <p> Fill in the Application form below.</p>
+        <form class ="submission" action="/">
+                <fieldset>
+
+                    <legend>
+                      <h3>Personal Details</h3>
+                    </legend>
+
+                    <div class="personalInfo">
+                        <div> 
+                            <label for="full_name"> Full Name </label> 
+                            <input type="text" id = "full_name" name="full_name">
+                        </div> 
+                        <div> 
+                            <label for="nID"> National Identification Number </label> 
+                            <input type="text" id = "nID" name="nID">
+                        </div> 
+                        <div class ="birthdateOptions">
+                            <label for="gender">Gender</label>
+                            <select id="gender"> 
+                                <option value="Male"> Male </option>     
+                                <option value="Female"> Female </option>  
+                            </select> 
+                        </div>
+                        <div> 
+                            <label for="email"> Email </label> 
+                            <input type="email" id = "email" name="email">
+                        </div>
+                        <div>
+                            <label for="phone_number"> Phone Number </label> 
+                            <input type="text" id = "phone_number" name="phone_number">
+                        </div>    
+                        <div>
+                            <label for="street"> Street </label> 
+                            <input type="text" id = "street" name="street">
+                        </div>    
+                        <div>                
+                            <label for="city"> City </label> 
+                            <input type="text" id = "city" name="city">
+                        </div>  
+                        <div>               
+                            <label for="country"> Country </label> 
+                            <input type="text" id = "country" name="country">
+                        </div>   
+                        <div>
+                            <label for="birth_date"> Birth Date </label> 
+                            <input type="date" id = "birth_date" name="birth_date">
+                        </div> 
+                    </div>
+
+                </fieldset>
+
+                <fieldset>
+
+                    <legend>
+                      <h3>Account Details</h3>
+                    </legend>
+
+                    <div class ="accOptions">
+                        <label for="acc_type"> Account Type </label> 
+                        <select id="acc_type"> 
+                            <option value="=CheckingAccount"> Checking Account </option>     
+                            <option value="=CurrentAccount"> Current Account</option>  
+                            <option value="=SavingAccount"> Saving Account</option>  
+                        </select>     
+                    </div> 
+
+                </fieldset>
+                <fieldset>
+                    <legend>
+                      <h3>Terms and Notifications</h3>
+                    </legend>
+                    <div  class="terms-mailing">
+                      <div class="checkbox">
+                        <input type="checkbox" name="checkbox"><span>I accept the <a href="https://www.w3docs.com/privacy-policy">Privacy Policy </a></span>
+                      </div>
+                      <div class="checkbox">
+                        <input type="checkbox" name="checkbox"><span>I want to receive notifications on this account</span>
+                      </div>
+                  </fieldset>
+                <button type="submit" href="/">Create Account</button>
+
+        </form>
+    </body>
+</html>

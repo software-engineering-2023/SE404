@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+       h1{
+            color: #450663;
+            font-family: "Trebuchet MS";
+            font-size: 34px;
+            font-weight: 600;
+            text-align: center;
+        }
+        body{
+            background-image: url('img9.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+        .submission{
+            max-width: 600px;
+            height: 300px;
+            margin: 6rem 26rem;
+            padding: 2rem;
+        }
+        label{
+            display: block;
+            padding: 1rem 0 .25rem;
+            margin: 0.5rem 2rem;
+            font-family: "Trebuchet MS";
+            font-size: 18px;
+            font-weight: 600;
+            
+        }
+        input{
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            font-size: 16px;
+            border:none;
+            outline :none;
+            border-radius: 25px 25px 25px 25px;
+        }
+        button {
+            width: 45%;
+            border-radius: 35px 35px 35px 35px;
+            padding: 1rem ;
+            margin: 4rem 8rem;
+            border:none;
+            background: #450663; 
+            font-family: "Trebuchet MS";
+            font-size: 16px;
+            font-weight: 600;
+            color: #fff;
+            text-align: middle;
+           
+        }
+
+        </style>
+    </head>
+
+    <body>
+        <h1>SE404 Banking System</h1>
+        <form class ="submission" action="/">
+            <div> 
+                <label for="nID"> National Identification Number </label> 
+                <input type="text" id = "nID" name="nID">
+            </div>
+            <div> 
+                <label for="accNr"> Account Number </label> 
+                <input type="text" id = "accNr" name="accNr">
+            </div>
+            <button type="submit" href="/">Close Account</button>
+        </form>
+
+       
+    </body>
+</html>
