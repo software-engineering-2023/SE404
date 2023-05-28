@@ -282,8 +282,9 @@ section {
 }
 
 h1 img {
-  width: 134px;
+  width: 150px;
   height: 87px;
+  margin-right: 10px;
 }
 
 /* .section {
