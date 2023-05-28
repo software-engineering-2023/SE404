@@ -369,3 +369,30 @@ function doTransfer() {
 function viewTransactions() {
   hideAll();
 }
+
+function showTransactionPanel() {
+  // Show the overlay
+  document.getElementById("overlay").style.display = "block";
+
+  // Show the transaction panel
+  document.getElementById("transactionPanel").style.display = "block";
+}
+
+// Add event listener to hide the transaction panel when clicking outside
+document.addEventListener("click", function (event) {
+  if (!event.target.matches(".bank-account-label")) {
+    // Hide the overlay
+    document.getElementById("overlay").style.display = "none";
+
+    // Hide the transaction panel
+    document.getElementById("transactionPanel").style.display = "none";
+  }
+});
+
+function showAccounts() {
+  window.location.href = "viewBankAccTrans.html";
+}
+
+function showCCTransactions() {
+  window.location.href = "viewCreditCardTrans.html";
+}

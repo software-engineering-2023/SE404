@@ -89,13 +89,25 @@
         <div class="cc-content">
           <h2 class="your-cc-text">Your Credit Cards</h2>
           <div class="cc-label" onclick="showCCDetails(603)">
-            Credit Card 603
+            <img src="frontCC1.PNG" width="250px" height="150px" />
           </div>
           <div class="cc-label" onclick="showCCDetails(319)">
-            Credit Card 319
+            <img
+              src="frontCC2.PNG"
+              alt=""
+              srcset=""
+              width="250px"
+              height="150px"
+            />
           </div>
           <div class="cc-label" onclick="showCCDetails(734)">
-            Credit Card 734
+            <img
+              src="frontCC3.PNG"
+              alt=""
+              srcset=""
+              width="250px"
+              height="150px"
+            />
           </div>
 
           <div class="cc-details" id="cc-details">
@@ -227,6 +239,12 @@
       </section>
       <section id="transactions-section">
         <!-- Transactions section content -->
+        <button type="submit" onclick="showAccounts()" class="trbutton">
+          View Bank Account Transactions
+        </button>
+        <button type="submit" onclick="showCCTransactions()" class="trbutton">
+          View Credit Card Transactions
+        </button>
       </section>
       <section id="setremainder-section"></section>
     </div>
