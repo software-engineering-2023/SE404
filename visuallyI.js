@@ -42,3 +42,7 @@ function speakText(text) {
 function delay(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
+
+window.onpopstate = function (event) {
+  window.location.href = "index.html";
+};

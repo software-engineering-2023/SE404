@@ -1,5 +1,5 @@
 .button-container {
-  position: absolute;
+  /* position: absolute; */
   top: 0;
   bottom: 0;
   left: 0;
@@ -9,18 +9,123 @@
   align-items: center;
 }
 
-.center-container {
-  position: absolute;
-  top: 20%;
-  left: 20%;
-  width: 60%;
-  height: 65%;
-  border: 1px solid #450663;
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
-  text-align: center;
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
+
+.center-container {
+  height: 100vh; /* Change height value from 200% to 200vh */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#account-section {
+  background-color: #312a5d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 20px; /* Add margin-bottom to create space between sections */
+}
+#creditcard-section {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 20px; /* Add margin-bottom to create space between sections */
+}
+
+#transfer-section {
+  background-color: #312a5d;
+  padding: 20px;
+  border-radius: 5px;
+  /* margin-top: 20px; */
+  color: #fff;
+  overflow: hidden;
+}
+
+#transfer-section h2 {
+  margin-top: 0;
+  padding-top: 20px;
+  border-top: 1px solid #fff;
+}
+
+#transfer-section label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+#transfer-section select,
+#transfer-section input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+/* #transfer-fields {
+  display: none;
+} */
+
+.transfer-field-group {
+  margin-bottom: 20px;
+}
+
+.transfer-field-group label {
+  font-weight: bold;
+}
+#field-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  flex-direction: column;
+}
+
+input[type="text"] {
+  width: 150px;
+}
+
+.transfer-button {
+  background-color: white;
+  color: black;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.transfer-button:hover,
+.transfer-button.active {
+  background-color: #b3b3b3;
+}
+
+#transactions-section {
+  background-color: white;
+}
+#setremainder-section {
+  background-color: #312a5d;
+}
+
+section {
+  min-height: 100vh;
+  max-height: 100vh;
+  width: 100%;
+  /* height: 100%; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: -10px;
+  flex-direction: column;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -32,8 +137,9 @@
 }
 
 .notification-icon {
-  position: relative;
+  position: absolute;
   cursor: pointer;
+  right: 30px;
   z-index: 15;
   size: 20px;
 }
@@ -81,47 +187,6 @@
   background-color: #f6f6f6;
 }
 
-.sidebar {
-  width: 200px;
-  background-color: #f5f5f5;
-  padding: 20px;
-  box-sizing: border-box;
-  position: fixed;
-  top: 90px; /* Adjust the top position to match the header height */
-  left: 0;
-  bottom: 0; /* Adjust the bottom position to fill the remaining height */
-  overflow-y: auto; /* Enable scrolling if content exceeds sidebar height */
-}
-
-.sidebar button,
-.right-sidebar button {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  background-color: #e9e9e9;
-  border: none;
-  text-align: left;
-  cursor: pointer;
-}
-
-.sidebar button:hover,
-.right-sidebar button:hover {
-  background-color: #d5d5d5;
-}
-
-.right-sidebar {
-  width: 200px;
-  background-color: #f5f5f5;
-  padding: 20px;
-  box-sizing: border-box;
-  position: fixed;
-  top: 90px;
-  right: 0;
-  bottom: 0;
-  overflow-y: auto;
-}
-
 .account-label,
 .cc-label {
   display: inline-block;
@@ -162,12 +227,13 @@
 }
 
 #account-details,
-.your-accounts-text,
-.account-label,
-#cc-details,
-.your-cc-text,
-.cc-label {
-  display: none;
+#cc-details {
+  /* display: none; */
+  visibility: hidden;
+}
+
+.cc-content {
+  margin-top: 10%;
 }
 
 .redeem-button {
@@ -194,12 +260,14 @@
 }
 
 .account-label-redeem {
-  display: none;
   margin: 5px;
   padding: 10px;
+  margin-bottom: 10px;
   background-color: #e9e9e9;
   border-radius: 4px;
   cursor: pointer;
+  display: inline-block;
+  visibility: hidden;
 }
 .account-label-redeem:hover {
   background-color: #d5d5d5;
@@ -210,5 +278,72 @@
 }
 
 #choose-account-redeem {
-  display: none;
+  visibility: hidden;
+}
+
+h1 img {
+  width: 134px;
+  height: 87px;
+}
+
+/* .section {
+  min-height: calc(100vh - 60px); 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+   align-items: center;
+  text-align: center; 
+}  */
+
+html {
+  scroll-behavior: smooth;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  height: 60px;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.header-nav {
+  display: flex;
+}
+
+.header-nav button {
+  margin-right: 10px;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+.header-right {
+  min-width: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.notification-icon {
+  position: relative;
+  cursor: pointer;
+}
+
+.notification-icon .badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: red;
+  color: #fff;
+  border-radius: 50%;
+  padding: 5px;
+  font-size: 12px;
 }

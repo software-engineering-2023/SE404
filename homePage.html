@@ -13,165 +13,220 @@
     ></script>
   </head>
   <body>
-    <div class="sidebar">
-      <button id="button1" onclick="openAccount()">Open Account</button>
-      <button id="button2" onclick="transferMoney()">Transfer Money</button>
-      <button id="button3" onclick="viewTransactions()">
-        View Transactions
-      </button>
-      <!-- Add more buttons as needed -->
-    </div>
-
-    <div class="right-sidebar">
-      <button id="button1" onclick="viewAccounts()">View Your Accounts</button>
-      <button id="button2" onclick="viewCCs()">View Your Credit Cards</button>
-      <button id="button3" onclick="viewTransactions()">
-        View Transactions
-      </button>
-    </div>
     <div class="header">
-      <h1>SE404 Banking System</h1>
-      <div class="notification-icon">
-        <!-- <button onclick="showNotifications()"> -->
-        <i
-          class="fa fa-bell"
-          onclick="showNotifications()"
-          id="notification-icon"
-        ></i>
-        <!-- </button> -->
-        <span class="badge">3</span>
-        <div class="notification-dropdown" id="notifications-dropdown">
-          <ul>
-            <li onclick="hideNotifications()">
-              Your loan with id 123 deadline is in 2 days
-            </li>
-            <li onclick="hideNotifications()">
-              Your credit card 567 has a payment with deadline in 5 days
-            </li>
-            <li onclick="hideNotifications()">
-              Your technical issue with ID 987 have been resolved
-            </li>
-          </ul>
+      <div class="header-left">
+        <h1><img src="logo.PNG" alt="" srcset="" /></h1>
+        <div class="header-nav">
+          <button onclick="scrollToSection('account-section')">
+            Bank Account
+          </button>
+          <button onclick="scrollToSection('creditcard-section')">
+            Credit Card
+          </button>
+          <button onclick="scrollToSection('transfer-section')">
+            Make A Transfer
+          </button>
+          <button onclick="scrollToSection('transactions-section')">
+            Transactions
+          </button>
+          <button onclick="scrollToSection('setremainder-section')">
+            Set A Remainder
+          </button>
+        </div>
+      </div>
+      <div class="header-right">
+        <div class="notification-icon">
+          <i
+            class="fa fa-bell"
+            onclick="showNotifications()"
+            id="notification-icon"
+          ></i>
+          <span class="badge">3</span>
+          <div class="notification-dropdown" id="notifications-dropdown">
+            <ul>
+              <li onclick="hideNotifications()">
+                Your loan with id 123 deadline is in 2 days
+              </li>
+              <li onclick="hideNotifications()">
+                Your credit card 567 has a payment with deadline in 5 days
+              </li>
+              <li onclick="hideNotifications()">
+                Your technical issue with ID 987 has been resolved
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
+
     <div class="center-container">
-      <!-- Add your central content here -->
-      <h2 class="your-accounts-text">Your Accounts</h2>
-      <div class="account-label" onclick="showAccountDetails(123)">
-        Account 123
-      </div>
-      <div class="account-label" onclick="showAccountDetails(853)">
-        Account 853
-      </div>
-      <div class="account-label" onclick="showAccountDetails(934)">
-        Account 934
-      </div>
+      <section id="account-section">
+        <div class="acc-content">
+          <h2 class="your-accounts-text">Your Accounts</h2>
+          <div class="account-label" onclick="showAccountDetails(123)">
+            Account 123
+          </div>
+          <div class="account-label" onclick="showAccountDetails(853)">
+            Account 853
+          </div>
+          <div class="account-label" onclick="showAccountDetails(934)">
+            Account 934
+          </div>
 
-      <div class="account-details" id="account-details">
-        <h3>Account Details</h3>
-        <p><strong>ID:</strong> <span id="account-id"></span></p>
-        <p><strong>Balance:</strong> <span id="account-balance"></span></p>
-        <p><strong>Account Type:</strong> <span id="account-type"></span></p>
-      </div>
+          <div class="account-details" id="account-details">
+            <h3>Account Details</h3>
+            <p><strong>ID:</strong> <span id="account-id"></span></p>
+            <p><strong>Balance:</strong> <span id="account-balance"></span></p>
+            <p>
+              <strong>Account Type:</strong> <span id="account-type"></span>
+            </p>
+          </div>
+        </div>
+      </section>
+      <section id="creditcard-section">
+        <div class="cc-content">
+          <h2 class="your-cc-text">Your Credit Cards</h2>
+          <div class="cc-label" onclick="showCCDetails(603)">
+            Credit Card 603
+          </div>
+          <div class="cc-label" onclick="showCCDetails(319)">
+            Credit Card 319
+          </div>
+          <div class="cc-label" onclick="showCCDetails(734)">
+            Credit Card 734
+          </div>
 
-      <h2 class="your-cc-text">Your Credit Cards</h2>
-      <div class="cc-label" onclick="showCCDetails(603)">Credit Card 603</div>
-      <div class="cc-label" onclick="showCCDetails(319)">Credit Card 319</div>
-      <div class="cc-label" onclick="showCCDetails(734)">Credit Card 734</div>
+          <div class="cc-details" id="cc-details">
+            <h3>Credit Card Details</h3>
+            <p><strong>ID:</strong> <span id="cc-id"></span></p>
+            <p><strong>Balance:</strong> <span id="cc-balance"></span></p>
+            <p>
+              <strong>Credit Card Points:</strong> <span id="cc-points"></span>
+            </p>
+            <button
+              class="redeem-button"
+              id="redeem-button1"
+              onclick="redeemPoints(1)"
+            >
+              Redeem Points
+            </button>
+            <button
+              class="redeem-button"
+              id="redeem-button2"
+              onclick="redeemPoints(2)"
+            >
+              Redeem Points
+            </button>
+            <button
+              class="redeem-button"
+              id="redeem-button3"
+              onclick="redeemPoints(3)"
+            >
+              Redeem Points
+            </button>
 
-      <div class="cc-details" id="cc-details">
-        <h3>Credit Card Details</h3>
-        <p><strong>ID:</strong> <span id="cc-id"></span></p>
-        <p><strong>Balance:</strong> <span id="cc-balance"></span></p>
-        <p><strong>Credit Card Points:</strong> <span id="cc-points"></span></p>
-        <button
-          class="redeem-button"
-          id="redeem-button1"
-          onclick="redeemPoints(1)"
-        >
-          Redeem Points
-        </button>
-        <button
-          class="redeem-button"
-          id="redeem-button2"
-          onclick="redeemPoints(2)"
-        >
-          Redeem Points
-        </button>
-        <button
-          class="redeem-button"
-          id="redeem-button3"
-          onclick="redeemPoints(3)"
-        >
-          Redeem Points
-        </button>
+            <h3 id="choose-account-redeem">
+              Choose Account to redeem points to:
+            </h3>
+            <div
+              class="account-label-redeem"
+              id="account-label-redeem11"
+              onclick="redeemPointsToAcc(11)"
+            >
+              Account 123
+            </div>
+            <div
+              class="account-label-redeem"
+              id="account-label-redeem12"
+              onclick="redeemPointsToAcc(12)"
+            >
+              Account 853
+            </div>
+            <div
+              class="account-label-redeem"
+              id="account-label-redeem13"
+              onclick="redeemPointsToAcc(13)"
+            >
+              Account 934
+            </div>
+            <div
+              class="account-label-redeem"
+              id="account-label-redeem21"
+              onclick="redeemPointsToAcc(21)"
+            >
+              Account 123
+            </div>
+            <div
+              class="account-label-redeem"
+              id="account-label-redeem22"
+              onclick="redeemPointsToAcc(22)"
+            >
+              Account 853
+            </div>
+            <div
+              class="account-label-redeem"
+              id="account-label-redeem23"
+              onclick="redeemPointsToAcc(23)"
+            >
+              Account 934
+            </div>
+            <div
+              class="account-label-redeem"
+              id="account-label-redeem31"
+              onclick="redeemPointsToAcc(31)"
+            >
+              Account 123
+            </div>
+            <div
+              class="account-label-redeem"
+              id="account-label-redeem32"
+              onclick="redeemPointsToAcc(32)"
+            >
+              Account 853
+            </div>
+            <div
+              class="account-label-redeem"
+              id="account-label-redeem33"
+              onclick="redeemPointsToAcc(33)"
+            >
+              Account 934
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="transfer-section">
+        <h2>Make A Transfer</h2>
+        <div>
+          <label for="transfer-option">Transfer Option:</label>
+          <select id="transfer-option" onchange="showTransferFields()">
+            <option value="">Choose transfer option</option>
+            <option value="own">Own Account</option>
+            <option value="internal">Internal</option>
+            <option value="domestic">Domestic</option>
+            <option value="international">International</option>
+          </select>
+          <div id="field-container">
+            <input type="text" id="amount-field" style="visibility: hidden" />
+            <input
+              type="text"
+              id="bank-account-field"
+              style="visibility: hidden"
+            />
+            <input
+              type="text"
+              id="bank-name-field"
+              style="visibility: hidden"
+            />
+            <input type="text" id="country-field" style="visibility: hidden" />
+          </div>
+        </div>
 
-        <h3 id="choose-account-redeem">Choose Account to redeem points to:</h3>
-        <div
-          class="account-label-redeem"
-          id="account-label-redeem11"
-          onclick="redeemPointsToAcc(11)"
-        >
-          Account 123
-        </div>
-        <div
-          class="account-label-redeem"
-          id="account-label-redeem12"
-          onclick="redeemPointsToAcc(12)"
-        >
-          Account 853
-        </div>
-        <div
-          class="account-label-redeem"
-          id="account-label-redeem13"
-          onclick="redeemPointsToAcc(13)"
-        >
-          Account 934
-        </div>
-        <div
-          class="account-label-redeem"
-          id="account-label-redeem21"
-          onclick="redeemPointsToAcc(21)"
-        >
-          Account 123
-        </div>
-        <div
-          class="account-label-redeem"
-          id="account-label-redeem22"
-          onclick="redeemPointsToAcc(22)"
-        >
-          Account 853
-        </div>
-        <div
-          class="account-label-redeem"
-          id="account-label-redeem23"
-          onclick="redeemPointsToAcc(23)"
-        >
-          Account 934
-        </div>
-        <div
-          class="account-label-redeem"
-          id="account-label-redeem31"
-          onclick="redeemPointsToAcc(31)"
-        >
-          Account 123
-        </div>
-        <div
-          class="account-label-redeem"
-          id="account-label-redeem32"
-          onclick="redeemPointsToAcc(32)"
-        >
-          Account 853
-        </div>
-        <div
-          class="account-label-redeem"
-          id="account-label-redeem33"
-          onclick="redeemPointsToAcc(33)"
-        >
-          Account 934
-        </div>
-      </div>
+        <button onclick="doTransfer()" class="transfer-button">Transfer</button>
+      </section>
+      <section id="transactions-section">
+        <!-- Transactions section content -->
+      </section>
+      <section id="setremainder-section"></section>
     </div>
   </body>
 </html>

@@ -33,7 +33,7 @@ recognition.onend = function () {
 };
 
 // Event handler for when speech is recognized
-recognition.onresult = function (event) {
+recognition.onresult = async function (event) {
   const transcript = event.results[event.results.length - 1][0].transcript;
   console.log("Recognized speech:", transcript);
   let text = transcript + "";
@@ -42,13 +42,28 @@ recognition.onresult = function (event) {
     /(username|user name|user)\s+(john|joan|jones|Jones|John|Joan|zone|Zone|Joel)\s+(password|basswood|buzzword|buzzwords|baswold|bassword|bassford|basford|pasford|basold|bassold|bathroom|Bosworth|pass|bus|bass)\s+(hello)/;
   console.log(pattern.test(text));
 
-  if (pattern.test(text)) {
-    window.location.href = "visuallyImpaired.html";
-  } else {
-    console.log("WRONG USERNAME OR PASSWORD");
-  }
+  let loading = document.getElementById("loader");
+  loading.style.display = "block";
+  let overlay = document.getElementById("overlay");
+  overlay.style.display = "flex";
+  await delay(2000);
+  let goToVI = document.getElementById("gotoVI");
+  history.pushState({}, "", "index.html");
+  console.log(goToVI);
+  await delay(1000);
+  goToVI.click();
+
+  //   if (pattern.test(text)) {
+  //     window.location.href = "visuallyImpaired.html";
+  //   } else {
+  //     console.log("WRONG USERNAME OR PASSWORD");
+  //   }
   // You can process the transcript further or perform actions based on the recognized speech
 };
 
 // Start speech recognition
 recognition.start();
+
+function delay(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}

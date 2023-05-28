@@ -5,6 +5,8 @@ let acc1balance = 19432;
 let acc2balance = 43239;
 let acc3balance = 79524;
 
+console.log(153);
+
 function openAccount() {
   window.location.href = "openAccount.html";
 }
@@ -68,29 +70,29 @@ function viewCCs() {
 }
 
 function hideAll() {
-  var yourAccountsText = document.querySelector(".your-accounts-text");
-  var accsLabel = document.querySelectorAll(".account-label");
-  yourAccountsText.style.display = "none";
-  for (let i = 0; i < accsLabel.length; i++)
-    accsLabel[i].style.display = "none";
+  //   var yourAccountsText = document.querySelector(".your-accounts-text");
+  //   var accsLabel = document.querySelectorAll(".account-label");
+  //   yourAccountsText.style.display = "none";
+  //   for (let i = 0; i < accsLabel.length; i++)
+  //     accsLabel[i].style.display = "none";
+  //   let accountDetails = document.getElementById("account-details");
+  //   accountDetails.style.display = "none";
+  //   let ccDetails = document.getElementById("cc-details");
+  //   ccDetails.style.display = "none";
+  //   var yourccsText = document.querySelector(".your-cc-text");
+  //   var ccLabel = document.querySelectorAll(".cc-label");
+  //   yourccsText.style.display = "none";
+  //   for (let i = 0; i < ccLabel.length; i++) ccLabel[i].style.display = "none";
+  //   var accsLabel = document.querySelectorAll(".account-label-redeem");
+  //   for (let i = 0; i < accsLabel.length; i++)
+  //     accsLabel[i].style.display = "none";
+  //   let redeemaccount = document.getElementById("choose-account-redeem");
+  //   redeemaccount.style.display = "none";
+}
 
-  let accountDetails = document.getElementById("account-details");
-  accountDetails.style.display = "none";
-
-  let ccDetails = document.getElementById("cc-details");
-  ccDetails.style.display = "none";
-
-  var yourccsText = document.querySelector(".your-cc-text");
-  var ccLabel = document.querySelectorAll(".cc-label");
-  yourccsText.style.display = "none";
-  for (let i = 0; i < ccLabel.length; i++) ccLabel[i].style.display = "none";
-
-  var accsLabel = document.querySelectorAll(".account-label-redeem");
-  for (let i = 0; i < accsLabel.length; i++)
-    accsLabel[i].style.display = "none";
-
-  let redeemaccount = document.getElementById("choose-account-redeem");
-  redeemaccount.style.display = "none";
+function scrollToSection(sectionId) {
+  const section = document.getElementById(sectionId);
+  section.scrollIntoView({ behavior: "smooth" });
 }
 
 function showAccountDetails(number) {
@@ -98,7 +100,7 @@ function showAccountDetails(number) {
   let accountDetails = document.getElementById("account-details");
   let accountBalance = document.getElementById("account-balance");
   let accountType = document.getElementById("account-type");
-  accountDetails.style.display = "block";
+  accountDetails.style.visibility = "visible";
 
   accountId.textContent = number;
   if (number === 123) {
@@ -115,7 +117,7 @@ function showAccountDetails(number) {
 
 function showCCDetails(number) {
   let redeemaccount = document.getElementById("choose-account-redeem");
-  redeemaccount.style.display = "none";
+  redeemaccount.style.visibility = "hidden";
   let ccId = document.getElementById("cc-id");
   let ccDetails = document.getElementById("cc-details");
   let ccBalance = document.getElementById("cc-balance");
@@ -123,10 +125,10 @@ function showCCDetails(number) {
   let cc1Button = document.getElementById("redeem-button1");
   let cc2Button = document.getElementById("redeem-button2");
   let cc3Button = document.getElementById("redeem-button3");
-  ccDetails.style.display = "block";
+  ccDetails.style.visibility = "visible";
   var accsLabel = document.querySelectorAll(".account-label-redeem");
   for (let i = 0; i < accsLabel.length; i++)
-    accsLabel[i].style.display = "none";
+    accsLabel[i].style.visibility = "hidden";
 
   ccId.textContent = number;
   if (number === 603) {
@@ -152,10 +154,10 @@ function showCCDetails(number) {
 
 function redeemPoints(number) {
   let chooseacc = document.getElementById("choose-account-redeem");
-  chooseacc.style.display = "block";
+  chooseacc.style.visibility = "visible";
   var accsLabel = document.querySelectorAll(".account-label-redeem");
   for (let i = 0; i < accsLabel.length; i++)
-    accsLabel[i].style.display = "inline-block";
+    accsLabel[i].style.visibility = "visible";
   let redeem11 = document.getElementById("account-label-redeem11");
   let redeem12 = document.getElementById("account-label-redeem12");
   let redeem13 = document.getElementById("account-label-redeem13");
@@ -265,6 +267,102 @@ function redeemPointsToAcc(number) {
     acc3balance += 1600;
     showCCDetails(734);
     alert("1600 EGP were cashed back to your account 934");
+  }
+}
+
+function showTransferFields() {
+  var transferOption = document.getElementById("transfer-option").value;
+
+  var amountField = document.getElementById("amount-field");
+  var bankAccountField = document.getElementById("bank-account-field");
+  var bankNameField = document.getElementById("bank-name-field");
+  var countryField = document.getElementById("country-field");
+
+  // Hide all fields initially
+  amountField.style.visibility = "hidden";
+  bankAccountField.style.visibility = "hidden";
+  bankNameField.style.visibility = "hidden";
+  countryField.style.visibility = "hidden";
+  console.log(transferOption);
+
+  if (transferOption === "own") {
+    amountField.style.visibility = "visible";
+    amountField.placeholder = "Own Account Amount";
+  } else if (transferOption === "internal") {
+    amountField.style.visibility = "visible";
+    bankAccountField.style.visibility = "visible";
+    amountField.placeholder = "Internal Amount";
+    bankAccountField.placeholder = "Internal Bank Account";
+  } else if (transferOption === "domestic") {
+    amountField.style.visibility = "visible";
+    bankAccountField.style.visibility = "visible";
+    bankNameField.style.visibility = "visible";
+    amountField.placeholder = "Domestic Amount";
+    bankAccountField.placeholder = "Domestic Bank Account";
+    bankNameField.placeholder = "Domestic Bank Name";
+  } else if (transferOption === "international") {
+    amountField.style.visibility = "visible";
+    bankAccountField.style.visibility = "visible";
+    bankNameField.style.visibility = "visible";
+    countryField.style.visibility = "visible";
+    amountField.placeholder = "International Amount";
+    bankAccountField.placeholder = "International Bank Account";
+    bankNameField.placeholder = "International Bank Name";
+    countryField.placeholder = "International Country";
+  }
+}
+
+function doTransfer() {
+  var transferOption = document.getElementById("transfer-option").value;
+
+  // Validate fields based on transfer option
+  var amountField = document.getElementById("amount-field");
+  var bankAccountField = document.getElementById("bank-account-field");
+  var bankNameField = document.getElementById("bank-name-field");
+  var countryField = document.getElementById("country-field");
+
+  var isMissingInfo = false;
+
+  if (transferOption === "own" && amountField.value === "") {
+    isMissingInfo = true;
+  } else if (
+    transferOption === "internal" &&
+    (amountField.value === "" || bankAccountField.value === "")
+  ) {
+    isMissingInfo = true;
+  } else if (
+    transferOption === "domestic" &&
+    (amountField.value === "" ||
+      bankAccountField.value === "" ||
+      bankNameField.value === "")
+  ) {
+    isMissingInfo = true;
+  } else if (
+    transferOption === "international" &&
+    (amountField.value === "" ||
+      bankAccountField.value === "" ||
+      bankNameField.value === "" ||
+      countryField.value === "")
+  ) {
+    isMissingInfo = true;
+  }
+
+  if (isMissingInfo) {
+    alert("Missing information. Please fill in all the required fields.");
+  } else {
+    alert("Transfer done");
+    document.getElementById("transfer-option").selectedIndex = 0;
+
+    // Hide all fields
+    document.getElementById("amount-field").style.visibility = "hidden";
+    document.getElementById("amount-field").value = "";
+    document.getElementById("bank-account-field").style.visibility = "hidden";
+    document.getElementById("bank-account-field").value = "";
+    document.getElementById("bank-name-field").style.visibility = "hidden";
+    document.getElementById("bank-name-field").value = "";
+    document.getElementById("country-field").style.visibility = "hidden";
+    document.getElementById("country-field").value = "";
+    // Reset the form or perform other actions here
   }
 }
 
