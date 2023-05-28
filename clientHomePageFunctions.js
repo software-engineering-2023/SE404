@@ -40,3 +40,48 @@ document.addEventListener("click", function (event) {
     hideNotifications();
   }
 });
+
+function viewAccounts() {
+  hideAll();
+  var yourAccountsText = document.querySelector(".your-accounts-text");
+  var accsLabel = document.querySelectorAll(".account-label");
+  console.log(accsLabel);
+  yourAccountsText.style.display = "block";
+  for (let i = 0; i < accsLabel.length; i++)
+    accsLabel[i].style.display = "inline-block";
+}
+
+function hideAll() {
+  var yourAccountsText = document.querySelector(".your-accounts-text");
+  var accsLabel = document.querySelectorAll(".account-label");
+  yourAccountsText.style.display = "none";
+  for (let i = 0; i < accsLabel.length; i++)
+    accsLabel[i].style.display = "none";
+
+  let accountDetails = document.getElementById("account-details");
+  accountDetails.style.display = "none";
+}
+
+function showAccountDetails(number) {
+  let accountId = document.getElementById("account-id");
+  let accountDetails = document.getElementById("account-details");
+  let accountBalance = document.getElementById("account-balance");
+  let accountType = document.getElementById("account-type");
+  accountDetails.style.display = "block";
+
+  accountId.textContent = number;
+  if (number === 123) {
+    accountBalance.textContent = "19432";
+    accountType.textContent = "Saving Account";
+  } else if (number === 853) {
+    accountBalance.textContent = "42349";
+    accountType.textContent = "Checking Account";
+  } else {
+    accountBalance.textContent = "79524";
+    accountType.textContent = "Current Account";
+  }
+}
+
+function viewTransactions() {
+  hideAll();
+}

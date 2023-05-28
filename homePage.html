@@ -23,7 +23,7 @@
     </div>
 
     <div class="right-sidebar">
-      <button id="button1" onclick="openAccount()">Open Account</button>
+      <button id="button1" onclick="viewAccounts()">View Your Accounts</button>
       <button id="button2" onclick="transferMoney()">Transfer Money</button>
       <button id="button3" onclick="viewTransactions()">
         View Transactions
@@ -57,6 +57,23 @@
     </div>
     <div class="center-container">
       <!-- Add your central content here -->
+      <h2 class="your-accounts-text">Your Accounts</h2>
+      <div class="account-label" onclick="showAccountDetails(123)">
+        Account 123
+      </div>
+      <div class="account-label" onclick="showAccountDetails(853)">
+        Account 853
+      </div>
+      <div class="account-label" onclick="showAccountDetails(934)">
+        Account 934
+      </div>
+
+      <div class="account-details" id="account-details">
+        <h3>Account Details</h3>
+        <p><strong>ID:</strong> <span id="account-id"></span></p>
+        <p><strong>Balance:</strong> <span id="account-balance"></span></p>
+        <p><strong>Account Type:</strong> <span id="account-type"></span></p>
+      </div>
     </div>
   </body>
 </html>
