@@ -24,7 +24,7 @@
 
     <div class="right-sidebar">
       <button id="button1" onclick="viewAccounts()">View Your Accounts</button>
-      <button id="button2" onclick="transferMoney()">Transfer Money</button>
+      <button id="button2" onclick="viewCCs()">View Your Credit Cards</button>
       <button id="button3" onclick="viewTransactions()">
         View Transactions
       </button>
@@ -73,6 +73,104 @@
         <p><strong>ID:</strong> <span id="account-id"></span></p>
         <p><strong>Balance:</strong> <span id="account-balance"></span></p>
         <p><strong>Account Type:</strong> <span id="account-type"></span></p>
+      </div>
+
+      <h2 class="your-cc-text">Your Credit Cards</h2>
+      <div class="cc-label" onclick="showCCDetails(603)">Credit Card 603</div>
+      <div class="cc-label" onclick="showCCDetails(319)">Credit Card 319</div>
+      <div class="cc-label" onclick="showCCDetails(734)">Credit Card 734</div>
+
+      <div class="cc-details" id="cc-details">
+        <h3>Credit Card Details</h3>
+        <p><strong>ID:</strong> <span id="cc-id"></span></p>
+        <p><strong>Balance:</strong> <span id="cc-balance"></span></p>
+        <p><strong>Credit Card Points:</strong> <span id="cc-points"></span></p>
+        <button
+          class="redeem-button"
+          id="redeem-button1"
+          onclick="redeemPoints(1)"
+        >
+          Redeem Points
+        </button>
+        <button
+          class="redeem-button"
+          id="redeem-button2"
+          onclick="redeemPoints(2)"
+        >
+          Redeem Points
+        </button>
+        <button
+          class="redeem-button"
+          id="redeem-button3"
+          onclick="redeemPoints(3)"
+        >
+          Redeem Points
+        </button>
+
+        <h3 id="choose-account-redeem">Choose Account to redeem points to:</h3>
+        <div
+          class="account-label-redeem"
+          id="account-label-redeem11"
+          onclick="redeemPointsToAcc(11)"
+        >
+          Account 123
+        </div>
+        <div
+          class="account-label-redeem"
+          id="account-label-redeem12"
+          onclick="redeemPointsToAcc(12)"
+        >
+          Account 853
+        </div>
+        <div
+          class="account-label-redeem"
+          id="account-label-redeem13"
+          onclick="redeemPointsToAcc(13)"
+        >
+          Account 934
+        </div>
+        <div
+          class="account-label-redeem"
+          id="account-label-redeem21"
+          onclick="redeemPointsToAcc(21)"
+        >
+          Account 123
+        </div>
+        <div
+          class="account-label-redeem"
+          id="account-label-redeem22"
+          onclick="redeemPointsToAcc(22)"
+        >
+          Account 853
+        </div>
+        <div
+          class="account-label-redeem"
+          id="account-label-redeem23"
+          onclick="redeemPointsToAcc(23)"
+        >
+          Account 934
+        </div>
+        <div
+          class="account-label-redeem"
+          id="account-label-redeem31"
+          onclick="redeemPointsToAcc(31)"
+        >
+          Account 123
+        </div>
+        <div
+          class="account-label-redeem"
+          id="account-label-redeem32"
+          onclick="redeemPointsToAcc(32)"
+        >
+          Account 853
+        </div>
+        <div
+          class="account-label-redeem"
+          id="account-label-redeem33"
+          onclick="redeemPointsToAcc(33)"
+        >
+          Account 934
+        </div>
       </div>
     </div>
   </body>

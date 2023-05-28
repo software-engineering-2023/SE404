@@ -1,6 +1,7 @@
 window.addEventListener("load", async function () {
   // Your code here
   speakText("WELCOME BACK JOHN");
+  console.log("oo");
   await delay(4000);
   recognition.start();
   // Add your method calls or other code that should run when the window loads

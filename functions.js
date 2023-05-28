@@ -39,7 +39,7 @@ recognition.onresult = function (event) {
   let text = transcript + "";
   console.log(text);
   const pattern =
-    /(username|user name)\s+(john|joan|jones|Jones|John|Joan|zone|Zone)\s+(password|basswood|buzzword|buzzwords|baswold|bassword)\s+(hello)/;
+    /(username|user name|user)\s+(john|joan|jones|Jones|John|Joan|zone|Zone|Joel)\s+(password|basswood|buzzword|buzzwords|baswold|bassword|bassford|basford|pasford|basold|bassold|bathroom|Bosworth|pass|bus|bass)\s+(hello)/;
   console.log(pattern.test(text));
 
   if (pattern.test(text)) {

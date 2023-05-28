@@ -1,3 +1,10 @@
+let cc1Points = 5600;
+let cc2Points = 400;
+let cc3Points = 14000;
+let acc1balance = 19432;
+let acc2balance = 43239;
+let acc3balance = 79524;
+
 function openAccount() {
   window.location.href = "openAccount.html";
 }
@@ -51,6 +58,15 @@ function viewAccounts() {
     accsLabel[i].style.display = "inline-block";
 }
 
+function viewCCs() {
+  hideAll();
+  var yourccsText = document.querySelector(".your-cc-text");
+  var ccLabel = document.querySelectorAll(".cc-label");
+  yourccsText.style.display = "block";
+  for (let i = 0; i < ccLabel.length; i++)
+    ccLabel[i].style.display = "inline-block";
+}
+
 function hideAll() {
   var yourAccountsText = document.querySelector(".your-accounts-text");
   var accsLabel = document.querySelectorAll(".account-label");
@@ -60,6 +76,21 @@ function hideAll() {
 
   let accountDetails = document.getElementById("account-details");
   accountDetails.style.display = "none";
+
+  let ccDetails = document.getElementById("cc-details");
+  ccDetails.style.display = "none";
+
+  var yourccsText = document.querySelector(".your-cc-text");
+  var ccLabel = document.querySelectorAll(".cc-label");
+  yourccsText.style.display = "none";
+  for (let i = 0; i < ccLabel.length; i++) ccLabel[i].style.display = "none";
+
+  var accsLabel = document.querySelectorAll(".account-label-redeem");
+  for (let i = 0; i < accsLabel.length; i++)
+    accsLabel[i].style.display = "none";
+
+  let redeemaccount = document.getElementById("choose-account-redeem");
+  redeemaccount.style.display = "none";
 }
 
 function showAccountDetails(number) {
@@ -71,14 +102,169 @@ function showAccountDetails(number) {
 
   accountId.textContent = number;
   if (number === 123) {
-    accountBalance.textContent = "19432";
+    accountBalance.textContent = acc1balance;
     accountType.textContent = "Saving Account";
   } else if (number === 853) {
-    accountBalance.textContent = "42349";
+    accountBalance.textContent = acc2balance;
     accountType.textContent = "Checking Account";
   } else {
-    accountBalance.textContent = "79524";
+    accountBalance.textContent = acc3balance;
     accountType.textContent = "Current Account";
+  }
+}
+
+function showCCDetails(number) {
+  let redeemaccount = document.getElementById("choose-account-redeem");
+  redeemaccount.style.display = "none";
+  let ccId = document.getElementById("cc-id");
+  let ccDetails = document.getElementById("cc-details");
+  let ccBalance = document.getElementById("cc-balance");
+  let ccType = document.getElementById("cc-points");
+  let cc1Button = document.getElementById("redeem-button1");
+  let cc2Button = document.getElementById("redeem-button2");
+  let cc3Button = document.getElementById("redeem-button3");
+  ccDetails.style.display = "block";
+  var accsLabel = document.querySelectorAll(".account-label-redeem");
+  for (let i = 0; i < accsLabel.length; i++)
+    accsLabel[i].style.display = "none";
+
+  ccId.textContent = number;
+  if (number === 603) {
+    ccBalance.textContent = "709.79";
+    ccType.textContent = cc1Points;
+    cc1Button.style.display = "inline-block";
+    cc2Button.style.display = "none";
+    cc3Button.style.display = "none";
+  } else if (number === 319) {
+    ccBalance.textContent = "941";
+    ccType.textContent = cc2Points;
+    cc1Button.style.display = "none";
+    cc2Button.style.display = "inline-block";
+    cc3Button.style.display = "none";
+  } else {
+    ccBalance.textContent = "63453";
+    ccType.textContent = cc3Points;
+    cc1Button.style.display = "none";
+    cc2Button.style.display = "none";
+    cc3Button.style.display = "inline-block";
+  }
+}
+
+function redeemPoints(number) {
+  let chooseacc = document.getElementById("choose-account-redeem");
+  chooseacc.style.display = "block";
+  var accsLabel = document.querySelectorAll(".account-label-redeem");
+  for (let i = 0; i < accsLabel.length; i++)
+    accsLabel[i].style.display = "inline-block";
+  let redeem11 = document.getElementById("account-label-redeem11");
+  let redeem12 = document.getElementById("account-label-redeem12");
+  let redeem13 = document.getElementById("account-label-redeem13");
+  let redeem21 = document.getElementById("account-label-redeem21");
+  let redeem22 = document.getElementById("account-label-redeem22");
+  let redeem23 = document.getElementById("account-label-redeem23");
+  let redeem31 = document.getElementById("account-label-redeem31");
+  let redeem32 = document.getElementById("account-label-redeem32");
+  let redeem33 = document.getElementById("account-label-redeem33");
+  if (number === 1) {
+    redeem11.style.display = "inline-block";
+    redeem12.style.display = "inline-block";
+    redeem13.style.display = "inline-block";
+    redeem21.style.display = "none";
+    redeem22.style.display = "none";
+    redeem23.style.display = "none";
+    redeem31.style.display = "none";
+    redeem32.style.display = "none";
+    redeem33.style.display = "none";
+  } else if (number === 2) {
+    redeem11.style.display = "none";
+    redeem12.style.display = "none";
+    redeem13.style.display = "none";
+    redeem21.style.display = "inline-block";
+    redeem22.style.display = "inline-block";
+    redeem23.style.display = "inline-block";
+    redeem31.style.display = "none";
+    redeem32.style.display = "none";
+    redeem33.style.display = "none";
+  } else {
+    redeem11.style.display = "none";
+    redeem12.style.display = "none";
+    redeem13.style.display = "none";
+    redeem21.style.display = "none";
+    redeem22.style.display = "none";
+    redeem23.style.display = "none";
+    redeem31.style.display = "inline-block";
+    redeem32.style.display = "inline-block";
+    redeem33.style.display = "inline-block";
+  }
+}
+
+function redeemPointsToAcc(number) {
+  if (cc1Points === 0 && (number === 11 || number === 12 || number === 13)) {
+    alert("ALREADY REDEEMED POINTS");
+    return;
+  }
+  if (cc2Points === 0 && (number === 21 || number === 22 || number === 23)) {
+    alert("ALREADY REDEEMED POINTS");
+    return;
+  }
+  if (cc3Points === 0 && (number === 31 || number === 32 || number === 33)) {
+    alert("ALREADY REDEEMED POINTS");
+    return;
+  }
+
+  if (number == 11) {
+    cc1Points = 0;
+    acc1balance += 600;
+    showCCDetails(603);
+    alert("600 EGP were cashed back to your account 123");
+  }
+  if (number == 12) {
+    cc1Points = 0;
+    acc2balance += 600;
+    showCCDetails(603);
+    alert("600 EGP were cashed back to your account 853");
+  }
+  if (number == 13) {
+    cc1Points = 0;
+    acc3balance += 600;
+    showCCDetails(603);
+    alert("600 EGP were cashed back to your account 934");
+  }
+  if (number == 21) {
+    cc2Points = 0;
+    acc1balance += 50;
+    showCCDetails(319);
+    alert("50 EGP were cashed back to your account 123");
+  }
+  if (number == 22) {
+    cc2Points = 0;
+    acc2balance += 50;
+    showCCDetails(319);
+    alert("50 EGP were cashed back to your account 853");
+  }
+  if (number == 23) {
+    cc2Points = 0;
+    acc3balance += 50;
+    showCCDetails(319);
+    alert("50 EGP were cashed back to your account 934");
+  }
+  if (number == 31) {
+    cc3Points = 0;
+    acc1balance += 1600;
+    showCCDetails(734);
+    alert("1600 EGP were cashed back to your account 123");
+  }
+  if (number == 32) {
+    cc3Points = 0;
+    acc2balance += 1600;
+    showCCDetails(734);
+    alert("1600 EGP were cashed back to your account 853");
+  }
+  if (number == 33) {
+    cc3Points = 0;
+    acc3balance += 1600;
+    showCCDetails(734);
+    alert("1600 EGP were cashed back to your account 934");
   }
 }
 
