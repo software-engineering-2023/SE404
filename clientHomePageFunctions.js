@@ -395,3 +395,7 @@ function goToccApp() {
 function goToSetR() {
   window.location.href = "set-remainder.html";
 }
+
+function goToccBills() {
+  window.location.href = "viewCCBills.html";
+}
