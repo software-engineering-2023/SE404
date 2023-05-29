@@ -16,6 +16,27 @@ function Login() {
   }
 }
 
+function register() {
+  console.log("ALO");
+  let username = document.getElementById("regun").value;
+  let pass = document.getElementById("regpass").value;
+  let mail = document.getElementById("regmail").value;
+  if (username === "KareemEladl") alert("USER ALREADY EXISTS");
+  else if (username === "MaryamFawzy") alert("USER ALREADY EXISTS");
+  else if (username === "NadaIbrahim") alert("USER ALREADY EXISTS");
+  else if (mail === "123") alert("USER ALREADY EXISTS");
+  else if (mail === "456") alert("USER ALREADY EXISTS");
+  else if (username === "KareemVI")
+    window.location.href = "visuallyImpaired.html";
+  else {
+    console.log(username);
+    console.log(pass);
+    alert(
+      "REGISTERATION SUCCESSFULL \n WELCOME TO SE404 BANK, YOUR ACCOUNT WILL BE ACTIVE WITHIN 24 HOURS"
+    );
+  }
+}
+
 const recognition = new window.webkitSpeechRecognition();
 
 // Set properties for the recognition
