@@ -20,10 +20,10 @@
         </h1>
         <div class="header-nav">
           <button onclick="scrollToSection('account-section')">
-            Bank Account
+            Bank Accounts
           </button>
           <button onclick="scrollToSection('creditcard-section')">
-            Credit Card
+            Credit Cards
           </button>
           <button onclick="scrollToSection('transfer-section')">
             Make A Transfer
@@ -34,6 +34,7 @@
           <button onclick="scrollToSection('setremainder-section')">
             Bills And Payments
           </button>
+          <button onclick="scrollToSection('loan-section')">Loans</button>
         </div>
       </div>
       <div class="header-right">
@@ -64,7 +65,13 @@
     <div class="center-container">
       <section id="account-section">
         <div class="acc-content">
-          <h2 class="your-accounts-text">Your Accounts</h2>
+          <button class="setr" onclick="goTo('openAccount.html')">
+            Open a New Account
+          </button>
+          <button class="setr" onclick="goTo('closeAccount.html')">
+            Close One Of Your Accounts
+          </button>
+          <h2 class="your-accounts-text" style="color: white">Your Accounts</h2>
           <div class="account-label" onclick="showAccountDetails(123)">
             Account 123
           </div>
@@ -89,6 +96,11 @@
         <div class="cc-content">
           <button class="applycc" onclick="goToccApp()">
             Apply For Credit Card
+          </button>
+          <br />
+          <br />
+          <button class="ccreq" onclick="goToccReq()">
+            View Your Credit Card Requests
           </button>
           <h2 class="your-cc-text">
             Your Credit Cards
@@ -146,7 +158,7 @@
             </button>
 
             <h3 id="choose-account-redeem">
-              Choose Account to redeem points to:
+              Choose Account from below to redeem points to:
             </h3>
             <div
               class="account-label-redeem"
@@ -261,6 +273,15 @@
         </button>
         <button class="view-bills" onclick="goToccBills()">
           View Credit Cards' Bills
+        </button>
+      </section>
+      <section id="loan-section">
+        <button class="trbutton">Apply For a Loan</button>
+        <button class="trbutton" onclick="goToLoanReq()">
+          View Your Loan Requests
+        </button>
+        <button class="trbutton" onclick="viewCurrentLoans()">
+          View Your Current Loans
         </button>
       </section>
     </div>

@@ -39,7 +39,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-bottom: 80px; /* Add margin-bottom to create space between sections */
+  margin-bottom: 110px; /* Add margin-bottom to create space between sections */
   margin-top: -10px;
 }
 
@@ -490,4 +490,18 @@ html {
 
 .view-bills:hover {
   background-color: #dadade;
+}
+
+.ccreq {
+  background-color: #312a5d;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }

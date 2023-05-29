@@ -402,3 +402,18 @@ function goToccBills() {
 function goToUtilityBills() {
   window.location.href = "viewUtilityBills.html";
 }
+
+function goToLoanReq() {
+  window.location.href = "viewLoanRequests.html";
+}
+function viewCurrentLoans() {
+  window.location.href = "viewCurrentLoans.html";
+}
+
+function goToccReq() {
+  window.location.href = "viewCCReq.html";
+}
+
+function goTo(pagename) {
+  window.location.href = pagename;
+}

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Utility Bill Payment</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #312a5d;
+        color: #fff;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      .payment-container {
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+
+      h1 {
+        text-align: center;
+        color: #312a5d;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+      }
+
+      .account-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-top: 20px;
+      }
+
+      .account-item {
+        width: calc(33.33% - 10px);
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        text-align: center;
+        cursor: pointer;
+        background-color: #ada2f1;
+      }
+
+      .account-item:hover {
+        background-color: #312a5d;
+      }
+
+      .selected {
+        background-color: #312a5d;
+        color: #fff;
+      }
+
+      .payment-button {
+        margin-top: 20px;
+        text-align: center;
+      }
+
+      .payment-button button {
+        padding: 10px 20px;
+        background-color: #312a5d;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      .payment-button button:hover {
+        background-color: #554d8f;
+      }
+
+      .payment-button button:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="payment-container">
+      <h1>Utility Bill Payment</h1>
+
+      <label for="payment-method">Payment Method:</label>
+      <select id="payment-method">
+        <option value="" selected disabled>Select a payment method</option>
+        <option value="bank-account">Bank Account</option>
+        <option value="credit-card">Credit Card</option>
+      </select>
+
+      <div id="bank-accounts" class="account-list">
+        <div class="account-item" id="bank-account-1">Bank Account 1</div>
+        <div class="account-item" id="bank-account-2">Bank Account 2</div>
+        <div class="account-item" id="bank-account-3">Bank Account 3</div>
+      </div>
+
+      <div id="credit-cards" class="account-list">
+        <div class="account-item" id="credit-card-1">Credit Card 1</div>
+        <div class="account-item" id="credit-card-2">Credit Card 2</div>
+        <div class="account-item" id="credit-card-3">Credit Card 3</div>
+      </div>
+
+      <div class="payment-button">
+        <button id="submit-payment" disabled>Make Payment</button>
+      </div>
+    </div>
+
+    <script>
+      var paymentMethodSelect = document.getElementById("payment-method");
+      var bankAccounts = document.getElementById("bank-accounts");
+      var creditCards = document.getElementById("credit-cards");
+      var selectedAccount = null;
+
+      paymentMethodSelect.addEventListener("change", function () {
+        var selectedPaymentMethod = paymentMethodSelect.value;
+        if (selectedAccount) {
+          document.getElementById(selectedAccount).classList.remove("selected");
+        }
+        creditCards.classList.remove("selected");
+        bankAccounts.classList.remove("selected");
+
+        bankAccounts.style.display = "none";
+        creditCards.style.display = "none";
+        selectedAccount = null;
+
+        if (selectedPaymentMethod === "bank-account") {
+          bankAccounts.style.display = "flex";
+          creditCards.classList.remove("selected");
+        } else if (selectedPaymentMethod === "credit-card") {
+          creditCards.style.display = "flex";
+          bankAccounts.classList.remove("selected");
+        }
+      });
+
+      var bankAccountButtons =
+        bankAccounts.getElementsByClassName("account-item");
+      var creditCardButtons =
+        creditCards.getElementsByClassName("account-item");
+
+      function handleButtonClick() {
+        var currentButton = this;
+        var isBankAccount = bankAccounts.style.display === "flex";
+        if (selectedAccount === currentButton.id) {
+          document.getElementById(selectedAccount).classList.remove("selected");
+          currentButton = null;
+          selectedAccount = null;
+          document.getElementById("submit-payment").disabled = true;
+          return;
+        }
+        if (isBankAccount) {
+          if (selectedAccount) {
+            document
+              .getElementById(selectedAccount)
+              .classList.remove("selected");
+          }
+          selectedAccount = currentButton.id;
+        } else {
+          if (selectedAccount) {
+            document
+              .getElementById(selectedAccount)
+              .classList.remove("selected");
+          }
+          selectedAccount = currentButton.id;
+        }
+
+        currentButton.classList.add("selected");
+        document.getElementById("submit-payment").disabled = false;
+      }
+
+      for (var i = 0; i < bankAccountButtons.length; i++) {
+        bankAccountButtons[i].addEventListener("click", handleButtonClick);
+      }
+
+      for (var j = 0; j < creditCardButtons.length; j++) {
+        creditCardButtons[j].addEventListener("click", handleButtonClick);
+      }
+
+      var submitButton = document.getElementById("submit-payment");
+      submitButton.addEventListener("click", function () {
+        var selectedPaymentMethod = paymentMethodSelect.value;
+
+        if (selectedPaymentMethod === "") {
+          alert("Please select a payment method.");
+        } else if (selectedAccount === null) {
+          alert("Please select an account.");
+        } else {
+          alert("Payment Successful");
+          window.location.href = "homePage.html";
+        }
+      });
+
+      window.addEventListener("DOMContentLoaded", function () {
+        paymentMethodSelect.selectedIndex = 0;
+        bankAccounts.style.display = "none";
+        creditCards.style.display = "none";
+        selectedAccount = null;
+      });
+    </script>
+  </body>
+</html>

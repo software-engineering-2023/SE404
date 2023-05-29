@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title>Accounts Transactions</title>
     <title>Credit Card Bills</title>
 
     <style>
@@ -64,60 +65,75 @@
         margin-top: 5px;
         margin-bottom: 5px;
       }
+      button{
+            border:none;
+            background: #450663; 
+            padding: 0.7rem;
+            border-radius: 25px 25px 25px 25px;
+            font-family: Trebuchet MS;
+            font-size: 14px;
+            font-weight: 600;
+            color: #fff;
+            text-align: middle;
+            width: 100px;
+            cursor: pointer;
+            margin: 1rem 6rem;
+            margin-bottom: 0;
+      }   
     </style>
   </head>
-
   <body>
     <h1>SE404 Banking System</h1>
     <section class="main">
       <div style="display: flex; flex-direction: column">
-        <h2>Upcoming Bills</h2>
         <div class="reqForms">
-          <strong class="title"><span>Bill Number: 104 </span></strong>
-          <p class="Info">Credit Card Number: 5200 8282 8282 8210</p>
-          <p class="Info">Bill Amount: 700 EGP</p>
-          <p class="Info">Due Date: 29/6/2023</p>
-          <p class="Info">Remainder Will Be Recieved On: 25/6/2023</p>
-          <p class="Info">Bill Description: Annual fees</p>
-        </div>
-
-        <div class="reqForms">
-          <strong class="title"><span>Bill Number: 103 </span></strong>
-          <p class="Info">Credit Card Number: 4000 0566 5566 5556</p>
-          <p class="Info">Bill Amount: 400 EGP</p>
-          <p class="Info">Due Date: 21/6/2023</p>
-          <p class="Info">Remainder Will Be Recieved On: 19/6/2023</p>
-          <p class="Info">Bill Description: Semi-Annual fees</p>
-        </div>
-
-        <div class="reqForms">
-          <strong class="title"><span>Bill Number: 102 </span></strong>
-          <p class="Info">Credit Card Number: 3714 4963 5398 4319</p>
-          <p class="Info">Bill Amount: 100 EGP</p>
-          <p class="Info">Due Date: 05/6/2023</p>
-          <p class="Info">Remainder Will Be Recieved On: 01/6/2023</p>
-          <p class="Info">Bill Description: Monthly fees</p>
-        </div>
-        <h2>Paid Bills</h2>
-        <div class="reqForms">
-          <strong class="title"><span>Bill Number: 101 </span></strong>
-          <p class="Info">Credit Card Number: 3714 4963 5398 4319</p>
-          <p class="Info">Bill Amount: 100 EGP</p>
-          <p class="Info">Due Date: 05/05/2023</p>
-          <p class="Info">Remainder Recieved On: 01/5/2023</p>
-          <p class="Info">Bill Paid On: 02/5/2023</p>
-          <p class="Info">Bill Description: Monthly fees</p>
-        </div>
-
-        <div class="reqForms">
-          <strong class="title"><span>Bill Number: 100 </span></strong>
-          <p class="Info">Credit Card Number: 4000 0566 5566 5556</p>
-          <p class="Info">Bill Amount: 100 EGP</p>
-          <p class="Info">Due Date: 21/01/2023</p>
-          <p class="Info">Remainder Recieved On: 19/01/2023</p>
-          <p class="Info">Bill Paid On: 20/01/2023</p>
-          <p class="Info">Bill Description: Semi-Annual fees</p>
-        </div>
+            <strong class="title"><span>Bill Number: 100 </span></strong>
+            <p class="Info">Credit Card Number: 4000 0566 5566 5556</p>
+            <p class="Info">Bill Amount: 100 EGP</p>
+            <p class="Info">Due Date: 21/01/2023</p>
+            <p class="Info">Remainder Recieved On: 19/01/2023</p>
+            <p class="Info">Bill Description: Semi-Annual fees</p>
+            <button>Pay</button>
+          </div>
+          <div class="reqForms">
+            <strong class="title"><span>Bill Number: 101 </span></strong>
+            <p class="Info">Credit Card Number: 3714 4963 5398 4319</p>
+            <p class="Info">Bill Amount: 100 EGP</p>
+            <p class="Info">Due Date: 05/05/2023</p>
+            <p class="Info">Remainder Recieved On: 01/5/2023</p>
+            <p class="Info">Bill Description: Monthly fees</p>
+            <button>Pay</button>
+          </div>
+          <div class="reqForms">
+            <strong class="title"><span>Bill Number: 102 </span></strong>
+            <p class="Info">Credit Card Number: 3714 4963 5398 4319</p>
+            <p class="Info">Bill Amount: 100 EGP</p>
+            <p class="Info">Due Date: 05/6/2023</p>
+            <p class="Info">Remainder Will Be Recieved On: 01/6/2023</p>
+            <p class="Info">Bill Description: Monthly fees</p>
+            <button>Pay</button>
+          </div>
+          <div class="reqForms">
+            <strong class="title"><span>Bill Number: 103 </span></strong>
+            <p class="Info">Credit Card Number: 4000 0566 5566 5556</p>
+            <p class="Info">Bill Amount: 400 EGP</p>
+            <p class="Info">Due Date: 21/6/2023</p>
+            <p class="Info">Remainder Will Be Recieved On: 19/6/2023</p>
+            <p class="Info">Bill Description: Semi-Annual fees</p>
+            <button>Pay</button>
+          </div>
+            <div class="reqForms">
+            <strong class="title"><span>Bill Number: 104 </span></strong>
+            <p class="Info">Credit Card Number: 5200 8282 8282 8210</p>
+            <p class="Info">Bill Amount: 700 EGP</p>
+            <p class="Info">Due Date: 29/6/2023</p>
+            <p class="Info">Remainder Will Be Recieved On: 25/6/2023</p>
+            <p class="Info">Bill Description: Annual fees</p>
+            <button>Pay</button>
+            </div>
+        
+        
+        
       </div>
     </section>
   </body>
