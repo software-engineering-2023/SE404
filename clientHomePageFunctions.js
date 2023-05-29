@@ -322,8 +322,8 @@ function doTransfer() {
   var countryField = document.getElementById("country-field");
 
   var isMissingInfo = false;
-
-  if (transferOption === "own" && amountField.value === "") {
+  if (transferOption === "") isMissingInfo = true;
+  else if (transferOption === "own" && amountField.value === "") {
     isMissingInfo = true;
   } else if (
     transferOption === "internal" &&
@@ -379,15 +379,6 @@ function showTransactionPanel() {
 }
 
 // Add event listener to hide the transaction panel when clicking outside
-document.addEventListener("click", function (event) {
-  if (!event.target.matches(".bank-account-label")) {
-    // Hide the overlay
-    document.getElementById("overlay").style.display = "none";
-
-    // Hide the transaction panel
-    document.getElementById("transactionPanel").style.display = "none";
-  }
-});
 
 function showAccounts() {
   window.location.href = "viewBankAccTrans.html";
@@ -395,4 +386,12 @@ function showAccounts() {
 
 function showCCTransactions() {
   window.location.href = "viewCreditCardTrans.html";
+}
+
+function goToccApp() {
+  window.location.href = "creditCardApplication.html";
+}
+
+function goToSetR() {
+  window.location.href = "set-remainder.html";
 }

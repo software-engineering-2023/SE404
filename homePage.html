@@ -32,7 +32,7 @@
             Transactions
           </button>
           <button onclick="scrollToSection('setremainder-section')">
-            Set A Remainder
+            Bills And Payments
           </button>
         </div>
       </div>
@@ -87,7 +87,13 @@
       </section>
       <section id="creditcard-section">
         <div class="cc-content">
-          <h2 class="your-cc-text">Your Credit Cards</h2>
+          <button class="applycc" onclick="goToccApp()">
+            Apply For Credit Card
+          </button>
+          <h2 class="your-cc-text">
+            Your Credit Cards
+            <h6>Click on any to view details & redeem points</h6>
+          </h2>
           <div class="cc-label" onclick="showCCDetails(603)">
             <img src="frontCC1.PNG" width="250px" height="150px" />
           </div>
@@ -246,7 +252,13 @@
           View Credit Card Transactions
         </button>
       </section>
-      <section id="setremainder-section"></section>
+      <section id="setremainder-section">
+        <button class="setr" onclick="goToSetR()">
+          Set a remainder for Utility bill
+        </button>
+        <button class="view-bills">View Utility Bills</button>
+        <button class="view-bills">View Credit Cards' Bills</button>
+      </section>
     </div>
   </body>
 </html>

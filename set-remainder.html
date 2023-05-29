@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Utility Bill Reminders</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        padding: 20px;
+      }
+
+      h1 {
+        color: #312a5d;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .reminder-form {
+        max-width: 400px;
+        margin: 0 auto;
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 4px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+
+      input[type="text"],
+      input[type="date"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+
+      button {
+        background-color: #312a5d;
+        color: #ffffff;
+        border: none;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #1a1540;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Utility Bill Reminders</h1>
+
+    <div class="reminder-form">
+      <div class="form-group">
+        <label for="bill-name">Bill Name:</label>
+        <input type="text" id="bill-name" placeholder="Enter bill name" />
+      </div>
+      <div class="form-group">
+        <label for="due-date">Due Date:</label>
+        <input type="date" id="due-date" />
+      </div>
+      <div class="form-group">
+        <label for="reminder-date">Reminder Date:</label>
+        <input type="date" id="reminder-date" />
+      </div>
+      <button type="button" id="set-reminder">Set Reminder</button>
+    </div>
+
+    <script>
+      document
+        .getElementById("set-reminder")
+        .addEventListener("click", function () {
+          var billName = document.getElementById("bill-name").value;
+          var dueDate = document.getElementById("due-date").value;
+          var reminderDate = document.getElementById("reminder-date").value;
+
+          if (billName && dueDate && reminderDate) {
+            alert(
+              "Reminder Set for " +
+                billName +
+                "!\nDue Date: " +
+                dueDate +
+                "\nReminder Date: " +
+                reminderDate
+            );
+            window.location.href = "homePage.html";
+          } else {
+            alert("Please fill in all fields.");
+          }
+        });
+    </script>
+  </body>
+</html>

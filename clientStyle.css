@@ -14,7 +14,7 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  overflow-x: hidden; 
+  overflow-x: hidden;
 }
 
 .center-container {
@@ -33,12 +33,14 @@ body {
   margin-bottom: 20px; /* Add margin-bottom to create space between sections */
 }
 #creditcard-section {
+  height: 70vh;
   background-color: white;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-bottom: 20px; /* Add margin-bottom to create space between sections */
+  margin-bottom: 80px; /* Add margin-bottom to create space between sections */
+  margin-top: -10px;
 }
 
 #transfer-section {
@@ -304,6 +306,7 @@ h1 img {
   font-weight: 600;
   color: #fff;
   text-align: middle;
+  cursor: pointer;
 }
 
 /* .section {
@@ -427,4 +430,64 @@ html {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.applycc {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.applycc:hover {
+  background-color: #45a049;
+}
+
+.applycc:active {
+  background-color: #3e8e41;
+}
+
+.setr {
+  background-color: #ffffff;
+  color: #312a5d;
+  border: 2px solid #312a5d;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 60px;
+}
+
+.setr:hover {
+  background-color: #dadade;
+}
+
+.view-bills {
+  background-color: #f8f8f8;
+  color: #312a5d;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 10px;
+}
+
+.view-bills:hover {
+  background-color: #dadade;
 }
