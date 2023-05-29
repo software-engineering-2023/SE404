@@ -43,7 +43,7 @@
         min-height: 6em;
         width: 23em;
         border-radius: 10px;
-        margin: 20px;
+        margin: 10px;
         transition: 0.7s ease;
         padding: 2em;
       }
@@ -69,16 +69,16 @@
       button {
         border: none;
         background: #450663;
-        padding: 0.5rem;
-        border-radius: 35px 35px 35px 35px;
+        padding: 1rem;
+        border-radius: 25px 25px 25px 25px;
         font-family: Trebuchet MS;
         font-size: 14px;
         font-weight: 600;
         color: #fff;
         text-align: middle;
-        width: 100px;
+        width: 160px;
         cursor: pointer;
-        margin: 1rem 1.4rem;
+        margin: 1rem 4rem;
       }
     </style>
   </head>
@@ -88,44 +88,35 @@
     <section class="main">
       <div style="display: flex; flex-direction: column">
         <div class="reqForms" id="1">
-          <strong class="title"><span>Loan Request Number 120 </span></strong>
-          <p class="Info">Full Name: Maryam Mohamed Fawzy</p>
-          <p class="Info">National Identification Number: 304324693746</p>
-          <p class="Info">Email: mariamfawzy45@gmail.com</p>
-          <p class="Info">Phone Number: +201018333456</p>
-          <p class="Info">Detailed Address: 9 Makram Eibed Street</p>
-          <p class="Info">Account Type: Personal Loan</p>
-          <p class="Info">Loan Amount: 273,000 EGP</p>
-          <p class="Info">Loan Purpose: starting a local brand</p>
-          <p class="Info">Employment status: Employed</p>
-          <p class="Info">Monthly Income: 7,000 EGP</p>
-          <button onclick="handle(1)">Accept</button>
-          <button onclick="handle(1)">Reject</button>
+          <strong class="title"><span>Compliant Number 300 </span></strong>
+          <p class="Info">
+            Full Name: Maryam Mohamed Fawzy, National Identification Number:
+            684693712146, Since 03/05/2023 I've been facing a technical problem
+            with my bank account transactions that after every transaction I
+            make, I've to wait for about 20-25 mins in order to see that my
+            transaction is recorded and reflected on the system
+          </p>
+          <button onclick="handle(1)">mark as handeled</button>
         </div>
-
         <div class="reqForms" id="2">
-          <strong class="title"><span>Loan Request Number 121 </span></strong>
-          <p class="Info">Full Name: Kareem Ahmed Eladl</p>
-          <p class="Info">National Identification Number: 684693712146</p>
-          <p class="Info">Email: kareem.eladl02@gmail.com</p>
-          <p class="Info">Phone Number: +20101343456</p>
-          <p class="Info">Detailed Address: 4 Moustafa El Nahas Street</p>
-          <p class="Info">Account Type: Car Loan</p>
-          <p class="Info">Car Model: Peugeot 508</p>
-          <p class="Info">Car Year: 2016</p>
-          <p class="Info">Vehicle Identification Number: 21732026</p>
-          <p class="Info">Employment status: Employed</p>
-          <p class="Info">Monthly Income: 4,720 EGP</p>
-          <button onclick="handle(2)">Accept</button>
-          <button onclick="handle(2)">Reject</button>
+          <strong class="title"><span>Compliant Number 301 </span></strong>
+          <p class="Info">
+            Full Name: Kareem Ahmed ELadl, National Identification Number:
+            1221293719946, The website is taking too long to respond. I've to
+            wait for about 3-4 mins in order to see a significant respond
+            according to whatever action I made whether it's submitting the
+            application form of opening a bank accound or applying for credit
+            card
+          </p>
+          <button onclick="handle(2)">mark as handeled</button>
         </div>
       </div>
     </section>
   </body>
   <script>
-    function handle(number) {
-      var to = document.getElementById(number);
-      to.style.display = "none";
+    function handle(num) {
+      var toHandle = document.getElementById(num);
+      toHandle.style.display = "none";
     }
   </script>
 </html>
