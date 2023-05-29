@@ -399,3 +399,6 @@ function goToSetR() {
 function goToccBills() {
   window.location.href = "viewCCBills.html";
 }
+function goToUtilityBills() {
+  window.location.href = "viewUtilityBills.html";
+}
