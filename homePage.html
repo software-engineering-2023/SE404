@@ -35,6 +35,9 @@
             Bills And Payments
           </button>
           <button onclick="scrollToSection('loan-section')">Loans</button>
+          <button onclick="scrollToSection('issue-section')">
+            Report a Problem
+          </button>
         </div>
       </div>
       <div class="header-right">
@@ -139,7 +142,7 @@
 
           <div class="cc-details" id="cc-details">
             <h3>Credit Card Details</h3>
-            <p><strong>ID:</strong> <span id="cc-id"></span></p>
+            <p><strong>Credit Card Number:</strong> <span id="cc-id"></span></p>
             <p><strong>Balance:</strong> <span id="cc-balance"></span></p>
             <p>
               <strong>Credit Card Points:</strong> <span id="cc-points"></span>
@@ -285,12 +288,22 @@
         </button>
       </section>
       <section id="loan-section">
-        <button class="trbutton">Apply For a Loan</button>
+        <button class="trbutton" onclick="goTo('loanRequest.html')">
+          Apply For a Loan
+        </button>
         <button class="trbutton" onclick="goToLoanReq()">
           View Your Loan Requests
         </button>
         <button class="trbutton" onclick="viewCurrentLoans()">
           View Your Current Loans
+        </button>
+      </section>
+      <section id="issue-section">
+        <button class="setr" onclick="goTo('creditCardCompliant.html')">
+          Report Credit Card Theft/Damage/Loss
+        </button>
+        <button class="setr" onclick="goTo('TechCompliant.html')">
+          Report Technical Issue
         </button>
       </section>
     </div>

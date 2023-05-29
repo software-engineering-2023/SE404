@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+        *{
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+        header{
+            background: #f0f0f0;
+            width: 100%;
+            position: fixed;
+            z-index: 999;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 200px;
+        }
+        .logo{
+            text-decoration: none;
+            color:#441b57;
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 1.8em;
+        }
+
+        .navigation a{
+            text-decoration: none;
+            color: #441b57;
+            font-size: 1.8em;
+            font-weight: 700;
+            padding-left: 30px;
+        }
+        .navigation a:hover{
+            font-size: 2.2em;
+        }
+        .navigation a:hover{
+            color: #89639b;
+        }
+        section{
+            padding: 100px 200px;
+            height: 70vh;
+        }
+        
+        .title{
+            display: flex;
+            justify-content: center;
+            color: #ffffff;
+            font-size: 2.2em;
+            font-weight: 800;
+              margin-bottom: 30px;
+        }
+        .title1{
+            display: flex;
+            justify-content: center;
+            color: #3f1258;
+            font-size: 2.2em;
+            font-weight: 800;
+            margin-bottom: 30px;
+        }
+        .content{
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        .card{
+            background-color: #fff;
+            width: 21.25em;
+            box-shadow: 0 10px 25px #6e6e6e; 
+            
+            border-radius: 10px;
+            padding: 25px;
+            margin: 15px;
+            transition: .7s ease;
+            }
+        .card:hover{
+            transform: scale(1.1);
+
+        }
+        .icon{
+            color: #441b57;
+            font-size: 8em;
+            text-align: center;
+        }
+        .info{
+            text-align: center;
+        }
+        .info h3{
+            color: #441b57;
+            font-size: 1.2em;
+            font-weight: 700;
+            margin: 10px;
+            
+        }
+        .projects{
+            background-color:#441b57;
+        }
+        .projects  .content{
+            margin-top: 30px;
+        }
+       
+     
+    </style>
+    <title>SE404 Banking System </title>
+</head>
+  <body>
+    <header>
+        <a href="/BankerPage" class="logo">SE404 Banking System </a>
+        <nav class="navigation">
+            <a href="#services">Account</a>
+            <a href="#projects"> Credit Card</a>
+            <a href="#loan"> Loan</a>
+            <i style="width: 50px; height: 50px;"></i>
+        </nav>
+    </header>
+
+    <section class="cards" id="services">
+        <h1 class="title1">Account</h1>
+        <div class="content">
+            <div class="card">
+                <a  style= "text-decoration: none;" href="/AccountsRequests"><div class="info">
+                <h3>Applications</h3></div></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="projects" id="projects">
+      <h2 class="title">Credit Card</h2>
+      <div class="content">
+        <div class="content">
+          <div class="card">
+            <div class="info">
+              <a  style= "text-decoration: none;" href="/CreditCardApp"><h3>Applications</h3></a>
+            </div>
+          </div> 
+        </div>
+      </div>
+    </section>
+
+    <section class="cards" id="loan">
+        <h1 class="title1">Loan</h1>
+        <div class="content">
+            <div class="card">
+                <div class="info">
+                    <a  style= "text-decoration: none;" href="/LoansRequests"><h3>Applications</h3></a></div>
+            </div>
+        </div>
+      </section>
+
+  </body>
+</html>

@@ -130,20 +130,23 @@ function showCCDetails(number) {
   for (let i = 0; i < accsLabel.length; i++)
     accsLabel[i].style.visibility = "hidden";
 
-  ccId.textContent = number;
   if (number === 603) {
+    ccId.textContent = "5200 8282 8282 8210";
     ccBalance.textContent = "709.79";
     ccType.textContent = cc1Points;
     cc1Button.style.display = "inline-block";
     cc2Button.style.display = "none";
     cc3Button.style.display = "none";
   } else if (number === 319) {
+    ccId.textContent = "4000 0566 5566 5556";
     ccBalance.textContent = "941";
     ccType.textContent = cc2Points;
     cc1Button.style.display = "none";
     cc2Button.style.display = "inline-block";
     cc3Button.style.display = "none";
   } else {
+    ccId.textContent = "3714 49635398 98431";
+
     ccBalance.textContent = "63453";
     ccType.textContent = cc3Points;
     cc1Button.style.display = "none";
@@ -404,7 +407,7 @@ function goToUtilityBills() {
 }
 
 function goToLoanReq() {
-  window.location.href = "viewLoanRequests.html";
+  window.location.href = "viewLoanRequestsClient.html";
 }
 function viewCurrentLoans() {
   window.location.href = "viewCurrentLoans.html";

@@ -1,89 +1,112 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <style>
-       h1{
-            color: #450663;
-            font-family: "Trebuchet MS";
-            margin-bottom: 3rem;
-            font-size: 34px;
-            font-weight: 600;
-            text-align: center;
-        }
-        body{
-            background-image: url('img9.jpg');
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-size: cover;
-        }
-        .submission{
-            max-width: 600px;
-            height: 400px;
-            margin: 0 26rem;
-            /* border: 2px solid #d83838;  */
-            padding: 2rem;
-        }
-        button {
-            width: 45%;
-            border-radius: 35px 35px 35px 35px;
-            padding: 1rem ;
-            margin: 0 8rem 2rem;
-            border:none;
-            background: #450663; 
-            font-family: "Trebuchet MS";
-            font-size: 16px;
-            font-weight: 600;
-            color: #fff;
-            text-align: middle;
-            cursor: pointer;
-        }
-        p{
-            padding: 1rem 0 .25rem;
-            margin: auto 2rem auto 0;
-            font-family: "Trebuchet MS";
-            font-size:  17px;
-            font-weight: 600;
-            text-align: center;
-            line-height: 30px;
-            line-break: auto;
-        }
-        textarea:hover {
-            box-shadow: 0 0 9px 0 #5d2875;
-            
-        }
-        textarea {
-            width:500px;
-            height: 300px;
-            padding: 10px;
-            border-radius: 15px 15px 15px 15px;
-            font-size: 15px;
-            align-items: center;
-            vertical-align: middle;
-            align-self: center;
-            align-content: center;
-            margin: auto -2rem;
-            border:none;
-            outline :none;
-        }
-        .item {
-            position: relative;
-            margin: 2rem 0;
-        }
-        </style>
-    </head>
+  <head>
+    <style>
+      h1 {
+        color: #450663;
+        font-family: "Trebuchet MS";
+        margin-bottom: 3rem;
+        font-size: 34px;
+        font-weight: 600;
+        text-align: center;
+      }
+      body {
+        background-image: url("img9.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+      }
+      .submission {
+        max-width: 600px;
+        height: 400px;
+        margin: 0 26rem;
+        padding: 2rem;
+      }
+      button {
+        width: 45%;
+        border-radius: 35px 35px 35px 35px;
+        padding: 1rem;
+        margin: 0 8rem 2rem;
+        border: none;
+        background: #450663;
+        font-family: "Trebuchet MS";
+        font-size: 16px;
+        font-weight: 600;
+        color: #fff;
+        text-align: middle;
+        cursor: pointer;
+      }
+      p {
+        padding: 1rem 0 0.25rem;
+        margin: auto 2rem auto 0;
+        font-family: "Trebuchet MS";
+        font-size: 17px;
+        font-weight: 600;
+        text-align: center;
+        line-height: 30px;
+        line-break: auto;
+      }
+      textarea:hover {
+        box-shadow: 0 0 9px 0 #5d2875;
+      }
+      textarea {
+        width: 500px;
+        height: 300px;
+        padding: 10px;
+        border-radius: 15px 15px 15px 15px;
+        font-size: 15px;
+        align-items: center;
+        vertical-align: middle;
+        align-self: center;
+        align-content: center;
+        margin: auto -2rem;
+        border: none;
+        outline: none;
+      }
+      .item {
+        position: relative;
+        margin: 2rem 0;
+      }
+    </style>
+  </head>
 
-    <body>
-        <h1>SE404 Banking System</h1>
-        <p>Online Technical Reports Forms serve as a convenient channel for customers to provide feedback, 
-            share suggestions, or register complaints about banking services.
-        Prompt resolution of complaints and addressing your feedback 
-            enhances customer satisfaction and service quality.</p>
-        <form class ="submission" action="/">
-            <div class="item">
-                <textarea rows="5" placeholder="  DESCRIBE YOUR PROBLEM IN DETAILS ... "></textarea>
-            </div>
+  <body>
+    <h1>SE404 Banking System</h1>
+    <p>
+      Online Technical Reports Forms serve as a convenient channel for customers
+      to provide feedback, share suggestions, or register complaints about
+      banking services. Prompt resolution of complaints and addressing your
+      feedback enhances customer satisfaction and service quality.
+    </p>
+    <form class="submission" onsubmit="return validateForm()">
+      <div class="item">
+        <textarea
+          id="problemDescription"
+          rows="5"
+          placeholder="  DESCRIBE YOUR PROBLEM IN DETAILS ... "
+        ></textarea>
+      </div>
 
-            <button type="submit" href="/">Submit</button>
-        </form>      
-    </body>
+      <button type="submit">Submit</button>
+    </form>
+
+    <script>
+      function validateForm() {
+        var problemDescription =
+          document.getElementById("problemDescription").value;
+
+        if (problemDescription.trim() === "") {
+          alert("Please provide a description of your problem.");
+          return false;
+        }
+
+        // Description provided, redirect to homePage.html
+        alert(
+          "We recieved your Compliant, Your will hear from us within 48 hours"
+        );
+        window.location.href = "homePage.html";
+        return false; // Prevent form submission
+      }
+    </script>
+  </body>
 </html>

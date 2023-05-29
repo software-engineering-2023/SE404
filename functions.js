@@ -4,9 +4,9 @@ function Login() {
   if (username === "KareemEladl" && pass === "123")
     window.location.href = "homePage.html";
   else if (username === "MaryamFawzy" && pass === "123")
-    window.location.href = "bankerPage.html";
+    window.location.href = "bankerHomePage.html";
   else if (username === "NadaIbrahim" && pass === "123")
-    window.location.href = "adminPage.html";
+    window.location.href = "adminHomePage.html";
   else if (username === "KareemVI" && pass === "123")
     window.location.href = "visuallyImpaired.html";
   else {

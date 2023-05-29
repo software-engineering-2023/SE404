@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      h1 {
+        color: #450663;
+        font-family: "Trebuchet MS";
+        font-size: 34px;
+        font-weight: 600;
+        text-align: center;
+      }
+      body {
+        background-image: url("img9.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+      }
+      .submission {
+        max-width: 600px;
+        height: 300px;
+        margin: 9rem 26rem;
+        /* border: 2px solid #d83838;   */
+        padding: 2rem;
+      }
+      button {
+        width: 60%;
+        border-radius: 35px 35px 35px 35px;
+        padding: 1rem;
+        margin: 1rem 6rem;
+        border: none;
+        background: #450663;
+        font-family: "Trebuchet MS";
+        font-size: 16px;
+        font-weight: 600;
+        color: #fff;
+        text-align: middle;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>SE404 Banking System</h1>
+    <form class="submission">
+      <button type="button" style="cursor: pointer" onclick="goToPer()">
+        Apply for Personal Loan
+      </button>
+      <button type="button" style="cursor: pointer" onclick="goToCar()">
+        Apply For Car Loan
+      </button>
+    </form>
+  </body>
+  <script>
+    function goToPer() {
+      window.location.href = "personalLoan.html";
+    }
+    function goToCar() {
+      window.location.href = "carLoan.html";
+    }
+  </script>
+</html>

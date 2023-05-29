@@ -1,175 +1,193 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <style>
-        body{
-            background-image: url('img9.jpg');
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-size: cover;
-        }
-        .submission{
-            max-width: 1000px;
-            height: 1400px;
-            margin: 4rem auto;
-            /* border: 2px solid #853838;  */
-            padding: 2rem;
-        }
-        label{
-            display: block;
-            padding: 1rem 0 .25rem;
-            margin: auto 2rem;
-            font-family: "Trebuchet MS";
-            font-size: 18px;
-            font-weight: 600;
-            
-        }
-        input{
-            display: block;
-            width: 80%;
-            padding: 1rem;
-            font-size: 16px;
-            border:none;
-            outline :none;
-            border-radius: 25px 25px 25px 25px;
-        }
-        h3 {
-            margin: 12px 2rem;
-            color: #450663;
-            font-family: "Trebuchet MS";
-            font-size: 24px;
-            font-weight: 600;
-        }
-        h1{
-            color: #450663;
-            font-family: "Trebuchet MS";
-            font-size: 34px;
-            font-weight: 600;
-            text-align: center;
-        }
-        fieldset {
-            margin: auto 2rem 1rem;
-            border-bottom: rgba(114, 114, 114, 0.863);
-            border-left: rgba(114, 114, 114, 0.863);
-            border-right:  rgba(114, 114, 114, 0.863);
-        }
-        .personalInfo{
-            margin: auto 3rem 2rem;
-        }
-        .amountAndPurpose{
-            margin: auto 3rem 2rem;
-        }
-        .empAndFinance{
-            margin: auto 3rem 2rem;
-        }
-        .empAndFinance select{
-            width: 84%;
-            padding: 1rem;
-            font-size: 18px;
-            border: none;
-            outline :none;
-            border-radius: 25px 25px 25px 25px;
-        }
-        #file{
-            width: 70%;
-            font-family: "Trebuchet MS";
-            font-size: 16px;
-            font-weight: 500;
-        }
-        button {
-            width: 20%;
-            border-radius: 35px 35px 35px 35px;
-            padding: 1rem ;
-            margin: 2rem 8rem;
-            border:none;
-            background: #450663; 
-            font-family: "Trebuchet MS";
-            font-size: 16px;
-            font-weight: 600;
-            color: #fff;
-            text-align: middle;
-           
-        }
+  <head>
+    <style>
+      body {
+        background-image: url("img9.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+      }
+      .submission {
+        max-width: 1000px;
+        height: 1400px;
+        margin: 4rem auto;
+        /* border: 2px solid #853838;  */
+        padding: 2rem;
+      }
+      label {
+        display: block;
+        padding: 1rem 0 0.25rem;
+        margin: auto 2rem;
+        font-family: "Trebuchet MS";
+        font-size: 18px;
+        font-weight: 600;
+      }
+      input {
+        display: block;
+        width: 80%;
+        padding: 1rem;
+        font-size: 16px;
+        border: none;
+        outline: none;
+        border-radius: 25px 25px 25px 25px;
+      }
+      h3 {
+        margin: 12px 2rem;
+        color: #450663;
+        font-family: "Trebuchet MS";
+        font-size: 24px;
+        font-weight: 600;
+      }
+      h1 {
+        color: #450663;
+        font-family: "Trebuchet MS";
+        font-size: 34px;
+        font-weight: 600;
+        text-align: center;
+      }
+      fieldset {
+        margin: auto 2rem 1rem;
+        border-bottom: rgba(114, 114, 114, 0.863);
+        border-left: rgba(114, 114, 114, 0.863);
+        border-right: rgba(114, 114, 114, 0.863);
+      }
+      .personalInfo {
+        margin: auto 3rem 2rem;
+      }
+      .amountAndPurpose {
+        margin: auto 3rem 2rem;
+      }
+      .empAndFinance {
+        margin: auto 3rem 2rem;
+      }
+      .empAndFinance select {
+        width: 84%;
+        padding: 1rem;
+        font-size: 18px;
+        border: none;
+        outline: none;
+        border-radius: 25px 25px 25px 25px;
+      }
+      #file {
+        width: 70%;
+        font-family: "Trebuchet MS";
+        font-size: 16px;
+        font-weight: 500;
+      }
+      button {
+        width: 20%;
+        border-radius: 35px 35px 35px 35px;
+        padding: 1rem;
+        margin: 2rem 8rem;
+        border: none;
+        background: #450663;
+        font-family: "Trebuchet MS";
+        font-size: 16px;
+        font-weight: 600;
+        color: #fff;
+        text-align: middle;
+      }
+    </style>
+  </head>
 
-        </style>      
-    </head>
+  <body>
+    <h1>SE404 Banking System</h1>
+    <form class="submission" onsubmit="return validateForm()" action="/">
+      <fieldset>
+        <legend>
+          <h3>Personal Details</h3>
+        </legend>
+        <div class="personalInfo">
+          <div>
+            <label for="full_name">Full Name</label>
+            <input type="text" id="full_name" name="full_name" required />
+          </div>
+          <div>
+            <label for="nID">National Identification Number</label>
+            <input type="text" id="nID" name="nID" required />
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div>
+            <label for="phone_number">Phone Number</label>
+            <input type="text" id="phone_number" name="phone_number" required />
+          </div>
+          <div>
+            <label for="address">Detailed Address</label>
+            <input type="text" id="address" name="address" required />
+          </div>
+        </div>
+      </fieldset>
 
+      <fieldset>
+        <legend>
+          <h3>Loan Amount and Purpose</h3>
+        </legend>
+        <div class="amountAndPurpose">
+          <div>
+            <label for="amount">Loan Amount</label>
+            <input
+              type="text"
+              id="amount"
+              name="amount"
+              placeholder="  EGP"
+              required
+            />
+          </div>
+          <div>
+            <label for="purpose">Loan Purpose</label>
+            <input type="text" id="purpose" name="purpose" required />
+          </div>
+        </div>
+      </fieldset>
 
-    <body>
-        <h1>SE404 Banking System</h1>
-        <form class ="submission" action="/">
-                <fieldset>
+      <fieldset>
+        <legend>
+          <h3>Employment and Financial Information</h3>
+        </legend>
+        <div class="empAndFinance">
+          <div class="empOptions">
+            <label for="status">Employment status</label>
+            <select id="status" required>
+              <option value="employed">Employed</option>
+              <option value="selfEmployed">Self-employed</option>
+              <option value="unEmployed">Unemployed</option>
+            </select>
+          </div>
+          <div>
+            <label for="income">Monthly Income</label>
+            <input
+              type="text"
+              id="income"
+              name="income"
+              placeholder="  EGP"
+              required
+            />
+          </div>
+          <div>
+            <label for="file">Upload Proof of Income</label>
+            <input type="file" id="file" required />
+          </div>
+        </div>
+      </fieldset>
+      <button type="submit" style="cursor: pointer">Submit</button>
+    </form>
 
-                    <legend>
-                      <h3>Personal Details</h3>
-                    </legend>
-
-                    <div class="personalInfo">
-                        <div> 
-                            <label for="full_name"> Full Name </label> 
-                            <input type="text" id = "full_name" name="full_name">
-                        </div> 
-                        <div> 
-                            <label for="nID"> National Identification Number </label> 
-                            <input type="text" id = "nID" name="nID">
-                        </div> 
-                        <div> 
-                            <label for="email"> Email </label> 
-                            <input type="email" id = "email" name="email">
-                        </div>
-                        <div>
-                            <label for="phone_number"> Phone Number </label> 
-                            <input type="text" id = "phone_number" name="phone_number">
-                        </div>    
-                        <div>
-                            <label for="address"> Detailed Address </label> 
-                            <input type="text" id = "address" name="address">
-                        </div>      
-                    </div>
-                </fieldset>
-
-                <fieldset>
-                    <legend>
-                      <h3>Loan Amount and Purpose</h3>
-                    </legend>
-
-                    <div class ="amountAndPurpose">
-                        <div>                
-                            <label for="amount"> Loan Amount </label> 
-                            <input type="text" id = "amount" name="amount" placeholder="  EGP">
-                        </div>  
-                        <div>               
-                            <label for="purpose"> Loan Purpose </label> 
-                            <input type="text" id = "purpose" name="purpose">
-                        </div>    
-                    </div> 
-                </fieldset>
-
-                <fieldset>
-                    <legend>
-                      <h3>Employment and Financial Information</h3>
-                    </legend>
-                    <div  class="empAndFinance">
-                        <div class ="empOptions">
-                            <label for="status">Employment status</label>
-                            <select id="status"> 
-                            <option value="employed"> Employed </option>     
-                            <option value="selfEmployed"> Self-employed </option>  
-                            <option value="unEmployed"> Unemployed </option>  
-                        </select> 
-                        </div>
-                        <div>
-                            <label for="income"> Monthly Income </label> 
-                            <input type="text" id = "income" name="income" placeholder="  EGP">
-                        </div> 
-                        <div>
-                            <label for="file"> Upload Proof of Income </label> 
-                            <input type="file" id = "file" >
-                        </div> 
-                      </div>
-                  </fieldset>
-                <button type="submit" href="/">Submit</button>
-
-        </form>
-    </body>
+    <script>
+      function validateForm() {
+        const inputs = document.getElementsByTagName("input");
+        for (let i = 0; i < inputs.length; i++) {
+          if (inputs[i].hasAttribute("required") && inputs[i].value === "") {
+            alert("Please fill in all required fields.");
+            return false;
+          }
+        }
+        window.location.href = "homePage.html";
+        return false;
+      }
+    </script>
+  </body>
 </html>

@@ -1,151 +1,200 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <style>
-       h1{
-            color: #450663;
-            font-family: "Trebuchet MS";
-            font-size: 34px;
-            font-weight: 600;
-            text-align: center;
-        }
-        body{
-            background-image: url('img9.jpg');
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-size: cover;
-        }
-        .submission{
-            max-width: 600px;
-            height: 300px;
-            margin: 0 26rem;
-            /* border: 2px solid #d83838;  */
-            padding: 2rem;
-        }
-        label{
-            display: block;
-            padding: 1rem 0 .25rem;
-            margin: 0.5rem 2rem;
-            font-family: "Trebuchet MS";
-            font-size: 18px;
-            font-weight: 600;
-            
-        }
-        input{
-            display: block;
-            width: 100%;
-            padding: 1rem;
-            font-size: 16px;
-            border:none;
-            outline :none;
-            border-radius: 25px 25px 25px 25px;
-        }
-        button {
-            width: 45%;
-            border-radius: 35px 35px 35px 35px;
-            padding: 1rem ;
-            margin: 4rem 8rem;
-            border:none;
-            background: #450663; 
-            font-family: "Trebuchet MS";
-            font-size: 16px;
-            font-weight: 600;
-            color: #fff;
-            text-align: middle;
-           
-        }
-        p{
-            padding: 1rem 0 .25rem;
-            margin: 3rem auto auto 0;
-            font-family: "Trebuchet MS";
-            font-size:  17px;
-            font-weight: 600;
-            text-align: center;
-            line-height: 10px;
-            line-break: auto;
+  <head>
+    <style>
+      h1 {
+        color: #450663;
+        font-family: "Trebuchet MS";
+        font-size: 34px;
+        font-weight: 600;
+        text-align: center;
+      }
+      body {
+        background-image: url("img9.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+      }
+      .submission {
+        max-width: 600px;
+        height: 300px;
+        margin: 0 26rem;
+        padding: 2rem;
+      }
+      label {
+        display: block;
+        padding: 1rem 0 0.25rem;
+        margin: 0.5rem 2rem;
+        font-family: "Trebuchet MS";
+        font-size: 18px;
+        font-weight: 600;
+      }
+      input {
+        display: block;
+        width: 100%;
+        padding: 1rem;
+        font-size: 16px;
+        border: none;
+        outline: none;
+        border-radius: 25px 25px 25px 25px;
+      }
+      button {
+        width: 45%;
+        border-radius: 35px 35px 35px 35px;
+        padding: 1rem;
+        margin: 4rem 8rem;
+        border: none;
+        background: #450663;
+        font-family: "Trebuchet MS";
+        font-size: 16px;
+        font-weight: 600;
+        color: #fff;
+        text-align: middle;
+      }
+      p {
+        padding: 1rem 0 0.25rem;
+        margin: 3rem auto auto 0;
+        font-family: "Trebuchet MS";
+        font-size: 17px;
+        font-weight: 600;
+        text-align: center;
+        line-height: 10px;
+        line-break: auto;
+      }
+      input[type="radio"],
+      input[type="checkbox"] {
+        display: none;
+      }
+      label.radio {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+      }
+      .question span {
+        margin-left: 40px;
+      }
+      .question-answer label {
+        display: block;
+      }
+      label.radio:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        border: 2px solid #464545;
+      }
+      input[type="radio"]:checked + label:before,
+      label.radio:hover:before {
+        border: 2px solid #470b63;
+      }
+      label.radio:after {
+        content: "";
+        position: absolute;
+        top: 20px;
+        left: 3.5px;
+        width: 8px;
+        height: 4px;
+        border: 3px solid #470b63;
+        border-top: none;
+        border-right: none;
+        transform: rotate(-45deg);
+        opacity: 0;
+      }
+      input[type="radio"]:checked + label:after {
+        opacity: 10;
+      }
+    </style>
+  </head>
 
-        }
-        input[type=radio], input[type=checkbox]  {
-            display:none;
-        }
-        label.radio {
-            position: relative;
-            display: inline-block;
-            cursor: pointer;
-        }
-        .question span {
-            margin-left: 40px;
-        }
-        .question-answer label {
-            display: block;
-        }
-        label.radio:before {
-            content: "";
-            position: absolute;
-            left: 0;
-            width: 15px;
-            height: 15px;
-            border-radius: 50%;
-            border: 2px solid #464545;
-        }
-        input[type=radio]:checked + label:before, label.radio:hover:before {
-            border: 2px solid  #470b63;
-        }
-        label.radio:after {
-            content: "";
-            position: absolute;
-            top: 20px;
-            left: 3.5px;
-            width: 8px;
-            height: 4px;
-            border: 3px solid  #470b63;
-            border-top: none;
-            border-right: none;
-            transform: rotate(-45deg);
-            opacity: 0;
-        }
-        input[type=radio]:checked + label:after {
-            opacity: 10;
+  <body>
+    <h1>SE404 Banking System</h1>
+    <p>
+      You can file a Credit Card Complaint online by filling the below Complaint
+      Form. Our Team will take care of the rest
+    </p>
+    <form class="submission" onsubmit="return validateForm()">
+      <div>
+        <label for="dateOfIn">Date of Incident</label>
+        <input type="date" id="dateOfIn" name="dateOfIn" required />
+      </div>
+      <div>
+        <label for="ccNr">Credit Card Number</label>
+        <input type="text" id="ccNr" name="ccNr" required />
+      </div>
+
+      <div class="question">
+        <label>How can we help you</label>
+        <div class="question-answer">
+          <div>
+            <input
+              type="radio"
+              value="theft"
+              id="radio_1"
+              name="report"
+              required
+            />
+            <label for="radio_1" class="radio"
+              ><span>Report Credit Card Theft</span></label
+            >
+          </div>
+          <div>
+            <input
+              type="radio"
+              value="loss"
+              id="radio_2"
+              name="report"
+              required
+            />
+            <label for="radio_2" class="radio"
+              ><span>Report Credit Card Loss</span></label
+            >
+          </div>
+          <div>
+            <input
+              type="radio"
+              value="damage"
+              id="radio_3"
+              name="report"
+              required
+            />
+            <label for="radio_3" class="radio"
+              ><span>Report Credit Card Damage</span></label
+            >
+          </div>
+        </div>
+      </div>
+
+      <button type="submit" style="cursor: pointer">Submit</button>
+    </form>
+
+    <script>
+      function validateForm() {
+        var dateOfIn = document.getElementById("dateOfIn").value;
+        var ccNr = document.getElementById("ccNr").value;
+        var reportOptions = document.getElementsByName("report");
+        var selectedOption = false;
+
+        for (var i = 0; i < reportOptions.length; i++) {
+          if (reportOptions[i].checked) {
+            selectedOption = true;
+            break;
+          }
         }
 
-        </style>
-    </head>
+        if (dateOfIn === "" || ccNr === "" || !selectedOption) {
+          alert("Please fill in all the required fields.");
+          return false;
+        }
 
-    <body>
-        <h1>SE404 Banking System</h1>
-        <p> You can file a Credit Card Complaint online by filling the below Complaint Form. Our Team will take care of the rest</p> 
-        <form class ="submission" action="/">
-            <div> 
-                <label for="dateOfIn">Date of Incident </label> 
-                <input type="date" id = "dateOfIn" name="dateOfIn">
-            </div>
-            <div> 
-                <label for="ccNr"> Credit Card Number </label> 
-                <input type="text" id = "ccNr" name="ccNr">
-            </div>
-
-            <div class="question">
-                <label>How can we help you</label>
-            <div class="question-answer">
-
-                <div>
-                  <input type="radio" value="none" id="radio_1" name="report"/>
-                  <label for="radio_1" class="radio"><span>Report Credit Card Theft</span></label>
-                </div>
-                <div>
-                  <input  type="radio" value="none" id="radio_2" name="report"/>
-                  <label for="radio_2" class="radio"><span>Report Credit Card Loss</span></label>
-                </div>
-                <div>
-                  <input  type="radio" value="none" id="radio_3" name="report"/>
-                  <label for="radio_3" class="radio"><span>Report Credit Card Damage</span></label>
-                </div>
-              </div>
-            </div>
-
-            <button type="submit" href="/">Submit</button>
-        </form>
-
-       
-    </body>
+        // All fields are filled, redirect to homePage.html
+        alert(
+          "Your Credit Card Have Been Temporary Frozen \n A new one will be delivered to you soon"
+        );
+        window.location.href = "homePage.html";
+        return false; // Prevent form submission
+      }
+    </script>
+  </body>
 </html>

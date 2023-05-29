@@ -210,6 +210,9 @@ section {
 .cc-details h3 {
   align-items: center;
 }
+.account-details {
+  color: white;
+}
 
 .account-details,
 .cc-details {
@@ -504,4 +507,8 @@ html {
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+}
+
+#issue-section {
+  background-color: #312a5d;
 }
